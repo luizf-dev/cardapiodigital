@@ -1,0 +1,14 @@
+#! Dependências do Composer
+vendor/
+
+#! Arquivos de configuração específicos do ambiente
+.env
+*.env
+
+#! Cache de templates
+App/Views-cache/
+
+
+#! pastas de scss
+/assets/scss/
+/assets/.sass-cache/
