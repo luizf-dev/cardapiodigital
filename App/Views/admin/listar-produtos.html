@@ -1,0 +1,49 @@
+    {if="$msgSucesso != ''"}        
+        <script>
+           msgSucesso('{$msgSucesso}');
+        </script>       
+    {/if}   
+
+    {if="$msgErro != ''"}        
+        <script>
+           msgErro('{$msgErro}');
+        </script>       
+    {/if}
+
+    <h3 class="titulo-categoria"> {$nome_categoria}</h3>
+    <div class="produtos">        
+        {loop="$produtos"}
+        <div class="produto">
+            <div class="dados-produto">
+                <div class="img">
+                    <img id="product-image-{$value.id}" src="/cardapio_online/assets/img/uploads/{$value.imagem}" alt="food">
+                </div>
+                <div class="info">
+                    <h5 class="nome-produto">{$value.nome}</h5>
+                    <p><span class="descricao">Descrição:</span><br> {$value.descricao}</p>
+                    <p class="preco">Preço: {function="formatarPreco($value.preco)"}</p> 
+                    {if="$value.status == 'ativo'"}
+                        <p class="active"><span class="status">Status do Produto: </span><br>{$value.status}</p>
+                    {/if}
+                    {if="$value.status == 'inativo'"}
+                      <p class="disabled"><span class="status">Status do Produto: </span><br>{$value.status}</p>
+                    {/if}            
+                    <p><span class="categoria">Categoria: </span><br>{$nome_categoria}</p>
+                    <p><span class="date">Data de Cadastro: </span><br>{function="formatarData($value.data_criacao)"}</p>
+                    <p><span class="date">Data de Atualização: </span><br>{function="formatarData($value.data_atualizacao)"}</p>
+                </div>
+            </div>
+            <div class="actions-produtos">
+                <a class="btns" href="/cardapio_online/admin/cadastrar-imagem/{$value.id}/new/">                    
+                        Atualizar Imagem
+                </a>
+                <a class="btns" href="/cardapio_online/admin/atualizar-produto/{$value.id}/">
+                    Atualizar Produto
+                </a>
+                <a class="btns" href="javascript:void(0)" onclick="confirmarExclusao('{$value.id}', '{$value.nome}')">
+                    Excluir Produto
+                </a>
+            </div>
+        </div>
+        {/loop}
+    </div>

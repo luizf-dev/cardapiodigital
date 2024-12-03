@@ -1,0 +1,48 @@
+{if="$msgErro != ''"}        
+    <script>
+        msgErro('{$msgErro}');
+    </script>
+{/if}
+
+
+<form class="form-add" method="POST" action="/cardapio_online/admin/atualizar-categoria/{$categoria.id_categoria}/">
+    <h3>Atualizar Categoria</h3>
+    <div class="input-group">
+        <label for="nome_categoria">Nome da Categoria</label>
+        <input type="text" name="nome_categoria" id="nome_categoria" value="{$categoria.nome_categoria}" />
+    </div>
+
+        {if="$categoria.status == 'ativo'"}
+            <label class="active" for="active">Status da Categoria - {$categoria.status} <i class="fa-solid fa-circle-check"></i></label>
+        {/if}
+        {if="$categoria.status == 'inativo'"}
+            <label class="disabled" for="disabled">Status da Categoria - {$categoria.status} <i class="fa-solid fa-circle-xmark"></i></label>
+        {/if}
+
+    <div class="input-group">                
+        <select name="status" id="status">
+            <option value="{$categoria.status}" > Selecione para alterar o status da categoria</option>
+            <option value="ativo">Ativo</option>
+            <option value="inativo">Inativo</option>
+        </select>
+    </div>
+
+    <div class="input-group">                
+        <select name="exibir_na_home" id="exibir_na_home">
+            <option value="{$categoria.exibir_na_home}"> Selecione para exibir/ocultar a categoria da Home</option>
+            <option value="0">Ocultar na Home</option>
+            <option value="1">Exibir na Home</option>
+        </select>
+    </div>
+    
+    <div class="form-actions">
+        <a href="/cardapio_online/admin/categories" class="btn-form default">
+            <i class="fas fa-arrow-circle-left btn-icons"></i>
+            Cancelar
+        </a>
+        <button type="submit" class="btn-form">
+            <i class="fas fa-plus-circle btn-icons"></i>
+            Atualizar
+        </button>
+    </div>
+</form>

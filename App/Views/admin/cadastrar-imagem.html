@@ -1,0 +1,24 @@
+    {if="$msgErro != ''"}        
+        <script>
+            msgErro('{$msgErro}');
+        </script>
+    {/if}
+
+    
+    <form class="form-add" action="/cardapio_online/admin/cadastrar-imagem/{$produtos.id}/new/" method="POST" enctype="multipart/form-data">       
+        <h3>Cadastrar Imagem</h3>
+        <!--= <input type="hidden" name="id" value="{$produtos.id}"> -->
+        <div class="input-group">
+            <label for="image">Selecione uma imagem</label>
+            <input type="file" name="imagem" id="imagem">
+        </div>
+
+        <div class="form-actions">
+            <a href="/cardapio_online/admin/categorie/{$produtos.id_categoria}/" class="btn-form">
+                Cancelar
+            </a>
+            <button type="submit" class="btn-form">
+                Cadastrar
+            </button>
+        </div>
+    </form>

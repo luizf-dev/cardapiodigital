@@ -1,0 +1,46 @@
+<div id="submenu-scroll" class="submenu-scroll">
+    <a href="/cardapiodigital">Home</a>
+    {loop="$category"}
+      <a href="/cardapiodigital/categorie/{$value.id_categoria}">{$value.nome_categoria}</a>
+    {/loop}
+</div>
+
+<div class="title-category"><h2>{$nome_categoria}</h2></div>
+
+<div class="container-menu">
+    {loop="$produtos"}
+        <div class="card-menu">
+            <div class="card-menu-info">
+                <h3 class="menu-item-title">{$value.nome}</h3>
+                <p class="menu-item-description">
+                    {$value.descricao}
+                </p>
+                <button class="btn-detalhes" data-id="{$value.id}" data-nome="{$value.nome}" data-descricao="{$value.descricao}" data-imagem="../assets/img/uploads/{$value.imagem}" data-preco='{function="formatarPreco($value.preco)"}'><span><i class="fa-solid fa-circle-plus"></i> Detalhes...</span></button>
+            </div>
+            <div class="card-menu-img">
+                {if="$value.imagem != ''"}
+                    <img src="/cardapiodigital/assets/img/uploads/{$value.imagem}" alt="">
+                {else}
+                    <img src="/cardapiodigital/assets/img/uploads/imagem-padrao.jpeg" alt="">
+                {/if}
+            </div>
+        </div>  
+    {/loop}  
+</div>
+
+<!--! Modal oculto! Mostra os detalhes do produto quando solicitado -->
+<div id="modal" class="modal" style="display: none;">    
+    <div class="modal-content">        
+        <div class="modal-body">
+            <div class="modal-image">
+                <img id="modal-image" src="" alt="Produto" />
+            </div>
+            <div class="modal-info">
+                <h2 id="modal-nome"></h2>
+                <p id="modal-descricao"></p>
+                <p id="modal-preco"></p>
+                <button class="btn-close-modal" id="close-modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

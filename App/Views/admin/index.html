@@ -1,0 +1,24 @@
+{if="$msgErro != ''"}        
+    <script>
+        msgErro('{$msgErro}');
+    </script>
+{/if}
+
+
+<div class="container-login">
+    <h1>Epic Food <span>Admin</span></h1>
+    <form method="POST" action="/cardapio_online/admin" class="formLogin">
+        <h3>Faça seu login</h3>
+        <div>
+            <input type="text" name="username" placeholder="Digite seu nome de usuário" autofocus="true" />
+            <span><i class="fa-solid fa-user"></i></span>
+        </div>
+        <div>
+            <input type="password" name="password" placeholder="Digite sua senha" />
+            <span><i class="fa-solid fa-lock"></i></span>
+        </div>
+        <button type="submit" class="btn">Entrar</button>
+    </form>
+</div>
+
+
