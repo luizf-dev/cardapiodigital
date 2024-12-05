@@ -6,6 +6,9 @@ use App\Helpers\Page;
 use App\Models\Produtos;
 use App\Models\Categories;
 use App\Database\Sql;
+use App\Helpers\Auth;
+use App\Helpers\Mensagens;
+use App\Helpers\PageAdmin;
 
 class ListarProdutosController {
 
@@ -30,5 +33,33 @@ class ListarProdutosController {
             "category" => $categoriasAtivas,
             "nome_categoria" => $nomeCategoria
         ]);
+    }
+
+    //= método para listar os produtos de acordo com a categoria no Admin
+    public function listarProdutosAdmin($id_categoria){
+
+            Auth::verifyLogin();
+
+            //!conexao com a base de dados
+            $connect = Sql::getDatabase();
+        
+            //! Instancia de um novo objeto Produtos, passando a conexao com o banco de dados
+            $produto = new Produtos($connect);
+            $produtos = $produto->listarProdutosPorCategoriaAdmin($id_categoria);
+        
+        
+            //!instancia de um novo objeto categoria
+            $categories = new Categories($connect);
+            $categorie = $categories->listarCategorias();
+            $nomeCategoria = $categories->getNomeCategoria($id_categoria);
+        
+            $page = new PageAdmin();
+            $page->renderPage('listar-produtos', [
+                "produtos" => $produtos,
+                "categorie" => $categorie,
+                "nome_categoria" => $nomeCategoria,
+                "msgSucesso" => Mensagens::getMsgSucesso(),
+                "msgErro" => Mensagens::getMsgErro()
+            ]);
     }
 }

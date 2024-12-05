@@ -1,6 +1,6 @@
 <?php
 
-namespace   App\Models;
+namespace App\Models;
 
 use App\Database\Connection;
 use PDO;
@@ -26,7 +26,6 @@ class User extends Connection{
         $query = "select id, username, password from tb_admin_user where username = :username";
         $stmt = $this->database->prepare($query);
         $stmt->bindValue(':username', $this->__get('username'));
-        //$stmt->bindValue(':password', $this->__get('password'));
         $stmt->execute();
 
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -37,23 +36,4 @@ class User extends Connection{
             return false;
         }
     }
-
-    public static function verificarSessao(){
-
-        if(isset($_SESSION['username']) && $_SESSION['username'] != ""){
-
-            $username = $_SESSION['username'];
-
-            return $username;
-
-        }else{
-
-            return false;
-           /* Mensagens::setMsgErro('Efetue seu login!');
-
-            header('Location: /cardapio_online/admin/');
-            exit;*/
-        }
-    }
-
 }

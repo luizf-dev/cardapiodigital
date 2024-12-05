@@ -1,62 +1,114 @@
-/*
-Error: File to import not found or unreadable: _variaveis.scss.
-       Load path: /opt/lampp/htdocs/cardapiodigital/assets/sass
-        on line 1 of sass/categoriesAdmin.scss
+.table-container {
+  padding: 0 5%; }
 
-1: @import '_variaveis.scss';
-2: 
-3: //!Tabela responsiva
-4: .table-container{   
-5:     padding: 0 5%;
-6: }
+.table-container h3 {
+  margin-top: 80px;
+  background-color: #040420;
+  color: #f8b008;
+  text-align: center;
+  padding: 10px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px; }
 
-Backtrace:
-sass/categoriesAdmin.scss:1
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/import_node.rb:67:in `rescue in import'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/import_node.rb:44:in `import'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/import_node.rb:28:in `imported_file'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/import_node.rb:37:in `css_import?'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:310:in `visit_import'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/stack.rb:79:in `block in with_base'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/stack.rb:79:in `with_base'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `map'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:10:in `visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/root_node.rb:36:in `css_tree'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:468:in `update_stylesheet'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `each'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:449:in `on_file_changed'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:320:in `block in watch'
-/usr/share/rubygems-integration/all/gems/listen-3.7.0/lib/listen/event/config.rb:28:in `call'
-/usr/share/rubygems-integration/all/gems/listen-3.7.0/lib/listen/event/processor.rb:117:in `block in _process_changes'
-/usr/share/rubygems-integration/all/gems/listen-3.7.0/lib/listen/thread.rb:26:in `rescue_and_log'
-/usr/share/rubygems-integration/all/gems/listen-3.7.0/lib/listen/event/processor.rb:116:in `_process_changes'
-/usr/share/rubygems-integration/all/gems/listen-3.7.0/lib/listen/event/processor.rb:25:in `block in loop_for'
-/usr/share/rubygems-integration/all/gems/listen-3.7.0/lib/listen/event/processor.rb:20:in `loop'
-/usr/share/rubygems-integration/all/gems/listen-3.7.0/lib/listen/event/processor.rb:20:in `loop_for'
-/usr/share/rubygems-integration/all/gems/listen-3.7.0/lib/listen/event/loop.rb:85:in `_process_changes'
-/usr/share/rubygems-integration/all/gems/listen-3.7.0/lib/listen/event/loop.rb:51:in `block in start'
-/usr/share/rubygems-integration/all/gems/listen-3.7.0/lib/listen/thread.rb:26:in `rescue_and_log'
-/usr/share/rubygems-integration/all/gems/listen-3.7.0/lib/listen/thread.rb:18:in `block in new'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: _variaveis.scss.\A        Load path: /opt/lampp/htdocs/cardapiodigital/assets/sass\A         on line 1 of sass/categoriesAdmin.scss\A \A 1: @import '_variaveis.scss';\A 2: \A 3: //!Tabela responsiva\A 4: .table-container{   \A 5:     padding: 0 5%;\A 6: }"; }
+.table {
+  width: 100%;
+  background-color: #8294b6;
+  border-collapse: collapse;
+  margin: 0 auto;
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4); }
+
+.table thead {
+  background-color: #1d355b; }
+
+.table thead tr th {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.35px;
+  color: #ffffff;
+  opacity: 1;
+  padding: 12px;
+  vertical-align: top;
+  border: 1px solid #000; }
+
+.table tbody tr td {
+  font-size: 15px;
+  letter-spacing: 0.35px;
+  font-weight: normal;
+  color: #000;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #000;
+  background-color: #ffffff; }
+
+.table tbody tr td.nome-categoria {
+  font-weight: 900; }
+
+.table tbody tr td.status {
+  text-transform: capitalize; }
+
+.table tbody tr td.active {
+  background-color: #11c678;
+  text-transform: capitalize; }
+
+.table tbody tr td.disabled {
+  background-color: red;
+  text-transform: capitalize; }
+
+.fa-circle-check {
+  color: #11c678;
+  padding-left: 5px;
+  font-size: 1.3rem; }
+
+.fa-circle-xmark {
+  color: red;
+  padding-left: 5px;
+  font-size: 1.3rem; }
+
+.fa-pencil, .fa-trash, .fa-square-arrow-up-right {
+  color: #040420;
+  font-size: 1.4rem;
+  min-width: 100%;
+  min-height: 100%; }
+
+.alert-delete {
+  color: #040420;
+  font-weight: 900;
+  font-size: 20px; }
+
+.alert-delete-categorie {
+  color: red; }
+
+@media (max-width: 768px) {
+  .table-container {
+    padding: 0 5px 0 5px; }
+
+  .table {
+    min-width: 300px; }
+
+  .table thead {
+    display: none; }
+
+  .table, .table tbody, .table tr, .table td {
+    display: block;
+    width: 100%; }
+
+  .table tr {
+    margin-bottom: 15px; }
+
+  .table tbody tr td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative; }
+
+  .table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 5px;
+    font-weight: 900;
+    font-size: 14px;
+    text-align: left;
+    color: #000; } }
+
+/*# sourceMappingURL=categoriesAdmin.css.map */

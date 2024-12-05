@@ -78,7 +78,7 @@ function confirmDelCategorie(id_categoria, nome_categoria) {
     }).then((result) => {
         if (result.isConfirmed) {
         //! Aqui, você pode redirecionar o usuário para a rota de exclusão
-        window.location.href = "/cardapio_online/admin/deletar-categoria/" + id_categoria;
+        window.location.href = "/cardapiodigital/admin/deletar-categoria" + id_categoria;
         } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
             'Cancelado',
@@ -138,6 +138,7 @@ closeModal.addEventListener('click', () => {
     //! Restaurar a posição de rolagem ao fechar o modal
     window.scrollTo(0,scrollPosition);    
 });
+
 
 
 //= evento para aplicar a classe fixed ao submenu de cartegorias 

@@ -6,17 +6,17 @@
 
 Options -Indexes 
 
-<FilesMatch "\.json$">
-    Deny from all
-</FilesMatch>
+#<FilesMatch "\.json$">
+ #   Deny from all
+#</FilesMatch>
 
-<FilesMatch "\.lock$">
-    Deny from all
-</FilesMatch>
+#<FilesMatch "\.lock$">
+ #   Deny from all
+#</FilesMatch>
 
-<FilesMatch "\.scss$">
-    Deny from all
-</FilesMatch>
+#<FilesMatch "\.scss$">
+    #Deny from all
+#</FilesMatch>
 
 RewriteEngine On
 
