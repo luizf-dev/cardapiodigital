@@ -7,8 +7,12 @@ require_once 'vendor/autoload.php';
 require_once './App/Helpers/Funcoes.php';
 
 use App\Controllers\CadastrarCategoriaController;
+use App\Controllers\CadastrarImagemController;
+use App\Controllers\CadastrarProdutosController;
 use App\Controllers\DeletarCategoriaController;
+use App\Controllers\DeletarProdutosController;
 use App\Controllers\EditarCategoriaController;
+use App\Controllers\EditarProdutosController;
 use App\Controllers\HomeAdminController;
 use App\Controllers\IndexController;
 use App\Controllers\ListarCategoriasController;
@@ -125,6 +129,67 @@ $app->get('/admin/categorie/{id_categoria}', function($request, $response, $args
     $controller->listarProdutosAdmin($id_categoria);
     return $response;
 });
+
+
+//= rota para cadastrar um novo produto
+$app->get('/admin/cadastrar-produto', function(){
+
+    $controller = new CadastrarProdutosController();
+    $controller->cadastrarProdutoPage();
+});
+
+//= rota para cadastrar um novo produto
+$app->post('/admin/cadastrar-produto', function(){
+
+    $controller = new CadastrarProdutosController();
+    $controller->cadastrarProdutoPost();
+});
+
+//= rota para atualizar um produto
+$app->get('/admin/atualizar-produto/{id}', function($request, $response, $args){
+
+    $id = $args['id'];
+    $controller = new EditarProdutosController();
+    $controller->EditarProdutoPage($id);
+    return $response;
+});
+
+//= rota post para atualizar um produto
+$app->post('/admin/atualizar-produto/{id}', function($request, $response, $args){
+
+    $id = $args['id'];
+    $controller = new EditarProdutosController();
+    $controller->EditarProdutoPost($id);
+    return $response;
+});
+
+//= rota para deletar um produto
+$app->get('/admin/deletar-produto/{id}', function($request, $response, $args){
+
+    $id = $args['id'];
+    $controller = new DeletarProdutosController();
+    $controller->deletarProdutos($id);
+    return $response;
+});
+
+//= rota para cadastrar uma imagem para o produto
+$app->get('/admin/cadastrar-imagem/{id}', function($request, $response, $args){
+
+    $id = $args['id'];
+    $controller = new CadastrarImagemController();
+    $controller->cadastrarImagemPage($id);
+    return $response;
+});
+
+//= rota para cadastrar uma imagem para o produto
+$app->post('/admin/cadastrar-imagem/{id}', function($request, $response, $args){
+
+    $id = $args['id'];
+    $controller = new CadastrarImagemController();
+    $controller->cadastrarImagemPost($id);
+    return $response;
+});
+
 
 
 

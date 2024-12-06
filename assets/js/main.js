@@ -48,7 +48,7 @@ function confirmarExclusao(id, nome) {
     }).then((result) => {
         if (result.isConfirmed) {
         //! Aqui, você pode redirecionar o usuário para a rota de exclusão
-        window.location.href = "/cardapio_online/admin/deletar-produto/" + id;
+        window.location.href = "/cardapiodigital/admin/deletar-produto/" + id;
         } else if (result.dismiss === Swal.DismissReason.cancel) {
         deletar.fire(
             'Cancelado',
@@ -78,7 +78,7 @@ function confirmDelCategorie(id_categoria, nome_categoria) {
     }).then((result) => {
         if (result.isConfirmed) {
         //! Aqui, você pode redirecionar o usuário para a rota de exclusão
-        window.location.href = "/cardapiodigital/admin/deletar-categoria" + id_categoria;
+        window.location.href = "/cardapiodigital/admin/deletar-categoria/" + id_categoria;
         } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
             'Cancelado',

@@ -14,9 +14,13 @@
     <div class="produtos">        
         {loop="$produtos"}
         <div class="produto">
-            <div class="dados-produto">
+            <div class="dados-produto">                             
                 <div class="img">
-                    <img id="product-image-{$value.id}" src="/cardapio_online/assets/img/uploads/{$value.imagem}" alt="food">
+                    {if="$value.imagem != ''"}
+                        <img id="product-image-{$value.id}" src="/cardapiodigital/assets/img/uploads/{$value.imagem}" alt="food">
+                    {else}
+                        <img src="/cardapiodigital/assets/img/uploads/imagem-padrao.jpeg" alt="">
+                    {/if}
                 </div>
                 <div class="info">
                     <h5 class="nome-produto">{$value.nome}</h5>
@@ -34,10 +38,10 @@
                 </div>
             </div>
             <div class="actions-produtos">
-                <a class="btns" href="/cardapio_online/admin/cadastrar-imagem/{$value.id}/new/">                    
+                <a class="btns" href="/cardapiodigital/admin/cadastrar-imagem/{$value.id}">                    
                         Atualizar Imagem
                 </a>
-                <a class="btns" href="/cardapio_online/admin/atualizar-produto/{$value.id}/">
+                <a class="btns" href="/cardapiodigital/admin/atualizar-produto/{$value.id}">
                     Atualizar Produto
                 </a>
                 <a class="btns" href="javascript:void(0)" onclick="confirmarExclusao('{$value.id}', '{$value.nome}')">

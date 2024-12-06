@@ -4,7 +4,7 @@
         </script>
     {/if}
 
-    <form class="form-add" method="POST" action="/cardapio_online/admin/atualizar-produto/{$produtos.id}/">
+    <form class="form-add" method="POST" action="/cardapiodigital/admin/atualizar-produto/{$produtos.id}">
         <h3>Atualizar Produto</h3>
         <div class="input-group">
             <label for="nome">Nome</label>
@@ -41,7 +41,7 @@
             </select>
         </div>
         <div class="form-actions">
-            <a href="/cardapio_online/admin/categorie/{$produtos.id_categoria}/" class="btn-form">
+            <a href="/cardapiodigital/admin/categorie/{$produtos.id_categoria}" class="btn-form">
                 <i class="fas fa-arrow-circle-left btn-icons"></i>
                 Cancelar
             </a>

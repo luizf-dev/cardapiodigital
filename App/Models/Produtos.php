@@ -69,8 +69,8 @@ class  Produtos extends Connection{
     } 
 
 
-      //!método para listar os produtos de uma categoria na home do cardapio, se o usuario definir a opcao exibir na home como true
-      public function listarProdutosNaHome(){
+    //!método para listar os produtos de uma categoria na home do cardapio, se o usuario definir a opcao exibir na home como true
+    public function listarProdutosNaHome(){
         try {
             $query = "
                 select 
@@ -121,8 +121,8 @@ class  Produtos extends Connection{
         }
     }
 
-     //!método para listar os produtos por categoria no dashboard Admin
-     public function listarProdutosPorCategoriaAdmin($id_categoria){
+    //!método para listar os produtos por categoria no dashboard Admin
+    public function listarProdutosPorCategoriaAdmin($id_categoria){
         try{
             
             $query = "select * from tb_produtos where id_categoria = :id_categoria";
