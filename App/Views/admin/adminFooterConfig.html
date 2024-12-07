@@ -24,21 +24,21 @@
              const inputPreco = document.getElementById('preco');
 
             inputPreco.addEventListener('input', function(){
-                
-                let valorEmReais = inputPreco.value;
+            
+            let valorEmReais = inputPreco.value;
 
-                //Remove tudo que não for dígito
-                valorEmReais = valorEmReais.replace(/\D/g, '');
+            //Remove tudo que não for dígito
+            valorEmReais = valorEmReais.replace(/\D/g, '');
 
-                //Converte o valor para centavos e aplica a máscara de moeda
-                valorEmReais = (valorEmReais / 100).toFixed(2).replace('.', ',');
+            //Converte o valor para centavos e aplica a máscara de moeda
+            valorEmReais = (valorEmReais / 100).toFixed(2).replace('.', ',');
 
 
-                //Adiciona os pontos de separação de milhar
-                valorEmReais = valorEmReais.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+            //Adiciona os pontos de separação de milhar
+            valorEmReais = valorEmReais.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 
-                //Atualiza o valor no input
-                inputPreco.value = valorEmReais;
+            //Atualiza o valor no input
+            inputPreco.value = valorEmReais;
             });
         </script>
     </body>

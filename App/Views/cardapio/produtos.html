@@ -15,7 +15,7 @@
                 <p class="menu-item-description">
                     {$value.descricao}
                 </p>
-                <button class="btn-detalhes" data-id="{$value.id}" data-nome="{$value.nome}" data-descricao="{$value.descricao}" data-imagem="../assets/img/uploads/{$value.imagem}" data-preco='{function="formatarPreco($value.preco)"}'><span><i class="fa-solid fa-circle-plus"></i> Detalhes...</span></button>
+                <button class="btn-detalhes" data-id="{$value.id}" data-nome="{$value.nome}" data-descricao="{$value.descricao}" data-imagem="../assets/img/uploads/{$value.imagem}" data-preco='R$ {function="formatarPreco($value.preco)"}'><span><i class="fa-solid fa-circle-plus"></i> Detalhes...</span></button>
             </div>
             <div class="card-menu-img">
                 {if="$value.imagem != ''"}
@@ -41,6 +41,21 @@
                 <p id="modal-preco"></p>
                 <button class="btn-close-modal" id="close-modal">Fechar</button>
             </div>
+        </div>
+    </div>
+</div>
+
+<!--! Modal oculto! Mostra o conteudo de contato-->
+<div id="modal-contato" class="modal-contato" style="display: none;">    
+    <div class="modal-contato-content">
+        <button class="btn-close-modal-contato" id="close-modal-contato">X</button>        
+        <div class="modal-contato-body">
+            <img src="../assets/img/imagens/logo-restaurante.png" alt="logo">
+            <span><i class="fa-solid fa-location-dot"></i> Rua Nome da rua, 2569, Bairro, Cidade, Estado, País</span>
+            <span><i class="fa-solid fa-phone"></i> 44 9156-8796</span>
+            <span><i class="fa-solid fa-envelope"></i> teste@email.com.br</span>
+            <span><i class="fa-brands fa-instagram"></i> @_instagram</span>
+            <span><i class="fa-solid fa-globe"></i> www.seusite.com.br</span>
         </div>
     </div>
 </div>

@@ -172,3 +172,25 @@ window.addEventListener('scroll', () => {
     lastScrollY = currentScrollY;
 
 });
+
+
+
+
+const btnContato = document.getElementById('btn-contato');
+const modalContato = document.getElementById('modal-contato');
+const btnCloseModalContato = document.getElementById('close-modal-contato');
+
+//=  Exibe o modal de contato
+btnContato.addEventListener('click', () => {
+    
+    modalContato.style.display = 'block';
+    //containerMenu.style.display = 'none';
+    
+
+});
+
+btnCloseModalContato.addEventListener('click', () => {
+
+    modalContato.style.display = 'none';
+});
+

@@ -191,7 +191,4 @@ $app->post('/admin/cadastrar-imagem/{id}', function($request, $response, $args){
 });
 
 
-
-
-
 $app->run();

@@ -15,10 +15,11 @@ html {
   justify-content: space-between;
   align-items: center;
   max-width: 1000px;
+  gap: 20px;
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding: 5px; }
+  padding-bottom: 50px; }
 
 .title-category {
   display: flex;
@@ -28,24 +29,24 @@ html {
   height: 70px;
   max-width: 1000px;
   margin: 30px auto;
-  color: #281604;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px; }
+  color: #281604; }
 
 .card-menu {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 0 0 12px;
-  margin-bottom: 60px;
-  width: 450px;
+  gap: 10px;
   border-left: 5px solid #f8b008; }
 
 .card-menu-info {
   display: flex;
   gap: 35px;
   width: 100%;
+  padding: 5px;
   flex-direction: column; }
+
+.card-menu-info h3 {
+  text-transform: capitalize; }
 
 .card-menu-info p {
   width: 300px;
@@ -96,10 +97,11 @@ html {
     height: 120px; }
 
   .card-menu {
-    max-width: 350px; }
+    width: 100%;
+    padding: 5px; }
 
   .card-menu-info {
-    gap: 10px;
+    gap: 20px;
     font-size: 1rem; }
 
   .card-menu-info p {
