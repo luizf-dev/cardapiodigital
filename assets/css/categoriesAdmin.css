@@ -78,6 +78,25 @@
 .alert-delete-categorie {
   color: red; }
 
+.msg-category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 100px; }
+
+.msg-category a.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #040420;
+  width: 200px;
+  height: 40px;
+  padding: 10px;
+  color: #f8b008;
+  text-decoration: none; }
+
 @media (max-width: 768px) {
   .table-container {
     padding: 0 5px 0 5px; }

@@ -11,43 +11,53 @@
     {/if}
 
     <h3 class="titulo-categoria"> {$nome_categoria}</h3>
-    <div class="produtos">        
-        {loop="$produtos"}
-        <div class="produto">
-            <div class="dados-produto">                             
-                <div class="img">
-                    {if="$value.imagem != ''"}
-                        <img id="product-image-{$value.id}" src="/cardapiodigital/assets/img/uploads/{$value.imagem}" alt="food">
-                    {else}
-                        <img src="/cardapiodigital/assets/img/uploads/imagem-padrao.jpeg" alt="">
-                    {/if}
+    <div class="produtos">
+        {if="count($produtos) > 0"}        
+            {loop="$produtos"}
+                <div class="produto">
+                    <div class="dados-produto">                             
+                        <div class="img-produto">
+                            {if="$value.imagem != ''"}
+                                <img id="product-image-{$value.id}" src="/cardapiodigital/assets/img/uploads/{$value.imagem}" alt="food">
+                            {else}
+                                <img src="/cardapiodigital/assets/img/uploads/imagem-padrao.jpeg" alt="">
+                            {/if}
+                        </div>
+                        <div class="info">
+                            <h5 class="nome-produto">{$value.nome}</h5>
+                            <p><span class="descricao">Descrição:</span> {$value.descricao}</p>
+                            <p><span class="preco">Preço: </span> {function="formatarPreco($value.preco)"}</p> 
+                            {if="$value.status == 'ativo'"}
+                                <p class="status"><span class="status">Status do Produto: </span> {$value.status} <i class="fa-solid fa-circle-check"></i></p>
+                            {/if}
+                            {if="$value.status == 'inativo'"}
+                                <p class="status"><span class="status">Status do Produto: </span> {$value.status} <i class="fa-solid fa-circle-xmark"></i></p>
+                            {/if}            
+                            <p><span class="categoria">Categoria: </span>{$nome_categoria}</p>
+                            <p><span class="date">Data Cadastro: </span>{function="formatarData($value.data_criacao)"}</p>
+                            <p><span class="date">Data Atualização: </span>{function="formatarData($value.data_atualizacao)"}</p>
+                        </div>
+                    </div>
+                    <div class="actions-produtos">
+                        <a class="btns" href="/cardapiodigital/admin/cadastrar-imagem/{$value.id}">                             
+                            <i class="fa-solid fa-image"></i> 
+                            Atualizar Imagem
+                        </a>
+                        <a class="btns" href="/cardapiodigital/admin/atualizar-produto/{$value.id}">
+                            <i class="fa-solid fa-pen-to-square"></i>                       
+                            Atualizar Produto
+                        </a>
+                        <a class="btns" href="javascript:void(0)" onclick="confirmarExclusao('{$value.id}', '{$value.nome}')">                            
+                            <i class="fa-solid fa-trash-can"></i>
+                            Excluir Produto
+                        </a>
+                    </div>
                 </div>
-                <div class="info">
-                    <h5 class="nome-produto">{$value.nome}</h5>
-                    <p><span class="descricao">Descrição:</span><br> {$value.descricao}</p>
-                    <p class="preco">Preço: {function="formatarPreco($value.preco)"}</p> 
-                    {if="$value.status == 'ativo'"}
-                        <p class="active"><span class="status">Status do Produto: </span><br>{$value.status}</p>
-                    {/if}
-                    {if="$value.status == 'inativo'"}
-                      <p class="disabled"><span class="status">Status do Produto: </span><br>{$value.status}</p>
-                    {/if}            
-                    <p><span class="categoria">Categoria: </span><br>{$nome_categoria}</p>
-                    <p><span class="date">Data de Cadastro: </span><br>{function="formatarData($value.data_criacao)"}</p>
-                    <p><span class="date">Data de Atualização: </span><br>{function="formatarData($value.data_atualizacao)"}</p>
-                </div>
+            {/loop}
+        {else}
+            <div class="msg-category">
+                <p>Ainda não existem produtos cadastrados.</p>
+                <a class="btn" href="/cardapiodigital/admin/cadastrar-produto">Cadastre aqui!</a>
             </div>
-            <div class="actions-produtos">
-                <a class="btns" href="/cardapiodigital/admin/cadastrar-imagem/{$value.id}">                    
-                        Atualizar Imagem
-                </a>
-                <a class="btns" href="/cardapiodigital/admin/atualizar-produto/{$value.id}">
-                    Atualizar Produto
-                </a>
-                <a class="btns" href="javascript:void(0)" onclick="confirmarExclusao('{$value.id}', '{$value.nome}')">
-                    Excluir Produto
-                </a>
-            </div>
-        </div>
-        {/loop}
+        {/if}
     </div>

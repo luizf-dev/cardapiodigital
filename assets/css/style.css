@@ -31,6 +31,9 @@ html {
   margin: 30px auto;
   color: #281604; }
 
+.banner-home {
+  height: 600px; }
+
 .card-menu {
   display: flex;
   justify-content: space-between;
@@ -81,7 +84,7 @@ html {
   box-shadow: 2px 2px 30px black;
   object-fit: cover; }
 
-.img img {
+.img img-produto {
   max-width: 300px; }
 
 @media screen and (max-width: 900px) {
@@ -93,8 +96,8 @@ html {
   .card-menu-info {
     gap: 20px; } }
 @media screen and (max-width: 768px) {
-  img.banner-home {
-    height: 120px; }
+  .banner-home {
+    height: 250px; }
 
   .card-menu {
     width: 100%;

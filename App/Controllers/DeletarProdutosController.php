@@ -29,7 +29,7 @@ class DeletarProdutosController {
         if($produto->deletarProduto($id)){
 
             Mensagens::setMsgSucesso('Produto excluído com sucesso!');
-            header("Location: /cardapio_online/admin/categorie/$id_categoria");
+            header("Location: /cardapiodigital/admin/categorie/$id_categoria");
             exit;
 
         }else{

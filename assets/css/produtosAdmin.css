@@ -17,16 +17,15 @@
   border-top: 1px solid #ffffff; }
 
 .produto {
-  max-width: 310px;
+  max-width: 300px;
   min-width: 300px;
   height: auto;
-  background-color: #ffffff;
-  padding: 5px 5px 5px 5px; }
+  background-color: #ffffff; }
 
 .dados-produto {
   display: flex;
   justify-content: space-around;
-  gap: 20px;
+  gap: 5px;
   flex-direction: column; }
 
 .produto img {
@@ -36,16 +35,23 @@
 .info {
   display: flex;
   flex-direction: column;
-  gap: 10px; }
+  gap: 10px;
+  padding: 5px; }
+
+.info .nome-produto {
+  text-align: center; }
 
 .info .nome-produto, .info .preco, .info .descricao,
 .info .status, .info .categoria, .info .date {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #040420;
   font-weight: 900;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
+
+.info .nome-produto::first-letter, .info p::first-letter {
+  text-transform: uppercase; }
 
 .info p {
   white-space: nowrap;
@@ -53,15 +59,13 @@
   font-size: 0.9rem;
   text-overflow: ellipsis; }
 
-.info .active {
-  background-color: #11c678;
-  padding: 8px;
-  text-transform: capitalize; }
-
-.info .disabled {
-  background-color: #c97c7c;
-  padding: 8px;
-  text-transform: capitalize; }
+.info p.status {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  gap: 5px;
+  padding: 2px 0;
+  font-weight: 400; }
 
 .actions-produtos {
   display: flex;
@@ -69,13 +73,15 @@
   gap: 10px;
   margin-top: 10px;
   width: 100%;
-  flex-direction: column; }
+  flex-direction: column;
+  padding: 5px; }
 
 .actions-produtos .btns {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 40px;
+  gap: 5px;
   background-color: #040420;
   color: #ffffff; }
 

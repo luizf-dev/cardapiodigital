@@ -49,8 +49,7 @@
   color: #ffffff; }
 
 .side-bar .menu {
-  width: 100%;
-  margin-top: 30px; }
+  width: 100%; }
 
 .side-bar .menu .item {
   position: relative;
@@ -62,7 +61,7 @@
   text-decoration: none;
   display: block;
   padding: 5px 30px;
-  line-height: 60px; }
+  line-height: 50px; }
 
 .side-bar .menu .item a:hover {
   background-color: #8294b6;
