@@ -23,6 +23,15 @@
   margin: 0 auto;
   gap: 30px; }
 
+.modal-contato-body span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; }
+
+.modal-contato-body span i {
+  font-size: 1.2rem; }
+
 .btn-close-modal-contato {
   position: absolute;
   top: 10px;
