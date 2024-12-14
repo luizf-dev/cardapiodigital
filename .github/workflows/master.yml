@@ -17,4 +17,4 @@ jobs:
         server: geonosis01.umbler.host
         username: cardapiodigital-teste-com
         password: U@>q4O=>vAx+}Lo
-        server-dir: /public/
+        server-dir: /
