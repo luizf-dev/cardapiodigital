@@ -5,9 +5,6 @@ vendor/
 .env
 *.env
 
-#! Cache de templates
-App/Views-cache/
-
 
 #! pastas de scss
 /assets/sass/
