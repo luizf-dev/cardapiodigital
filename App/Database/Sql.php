@@ -6,9 +6,9 @@ use PDOException;
 
 class Sql {
 
-    const HOSTNAME = "localhost";
-	const USERNAME = "root";
-	const PASSWORD = "";
+    const HOSTNAME = "mysql835.umbler.com";
+	const USERNAME = "cardapio_admin";
+	const PASSWORD = "userEpicFood";
 	const DBNAME = "db_cardapio";
 
 
