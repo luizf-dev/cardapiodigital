@@ -1,10 +1,11 @@
 .table-container {
-  padding: 0 5%; }
+  padding: 1px; }
 
 .table-container h3 {
   margin-top: 80px;
   background-color: #040420;
   color: #f8b008;
+  width: 100%;
   text-align: center;
   padding: 10px;
   border-top-right-radius: 5px;
@@ -38,7 +39,10 @@
   padding: 10px;
   text-align: center;
   border: 1px solid #000;
-  background-color: #ffffff; }
+  background-color: #fff; }
+
+.table tbody tr td.dt-cad, .table tbody tr td.dt-update {
+  font-size: 0.8rem; }
 
 .table tbody tr td.nome-categoria {
   font-weight: 900; }
@@ -70,13 +74,22 @@
   min-width: 100%;
   min-height: 100%; }
 
-.alert-delete {
-  color: #040420;
-  font-weight: 900;
-  font-size: 20px; }
-
-.alert-delete-categorie {
+.alert {
   color: red; }
+
+.texto-alerta {
+  font-size: 1rem; }
+
+.alert-del-category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #040420;
+  padding: 10px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 8px;
+  color: #f8b008; }
 
 .msg-category {
   display: flex;
@@ -99,10 +112,10 @@
 
 @media (max-width: 768px) {
   .table-container {
-    padding: 0 5px 0 5px; }
+    min-width: 100%; }
 
   .table {
-    min-width: 300px; }
+    min-width: 100%; }
 
   .table thead {
     display: none; }
@@ -112,18 +125,21 @@
     width: 100%; }
 
   .table tr {
-    margin-bottom: 15px; }
+    margin-bottom: 15px;
+    max-width: 100%;
+    background-color: red; }
 
   .table tbody tr td {
     text-align: right;
-    padding-left: 50%;
-    position: relative; }
+    padding-left: 10%;
+    position: relative;
+    width: 100%; }
 
   .table td:before {
     content: attr(data-label);
     position: absolute;
     left: 0;
-    width: 50%;
+    width: 60%;
     padding-left: 5px;
     font-weight: 900;
     font-size: 14px;

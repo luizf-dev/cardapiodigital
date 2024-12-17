@@ -18,14 +18,14 @@ class Page {
         "data" => []
     ];
 
-    public function __construct($opts = [], $tpl_dir = "App/Views/cardapio/"){
+    public function __construct($opts = [], $tpl_dir = "../cardapiodigital/App/Views/cardapio/"){
 
         
         $this->options = array_merge($this->defaults, $opts);
 
         $config = [
             "tpl_dir"   => $tpl_dir,
-            "cache_dir" => "App/Views-cache/",
+            "cache_dir" => "../cardapiodigital/App/Views-cache/",
             "debug"     => true
         ];
 

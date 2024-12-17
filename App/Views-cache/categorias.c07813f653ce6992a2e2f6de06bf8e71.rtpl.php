@@ -41,8 +41,8 @@
 
                     <td class="status" data-label="Status"><?php echo htmlspecialchars( $value1["status"], ENT_COMPAT, 'UTF-8', FALSE ); ?> <i class="fa-solid fa-circle-xmark"></i></td>
                   <?php } ?>              
-                  <td data-label="Data-Cadastro"><?php echo formatarData($value1["data_criacao"]); ?></td>
-                  <td data-label="Data-Atualização"><?php echo formatarData($value1["data_atualizacao"]); ?></td>
+                  <td class="dt-cad" data-label="Data-Cadastro"><?php echo formatarData($value1["data_criacao"]); ?></td>
+                  <td class="dt-update" data-label="Data-Atualização"><?php echo formatarData($value1["data_atualizacao"]); ?></td>
                   <td class="actions" data-label="Editar"><a href="/cardapiodigital/admin/atualizar-categoria/<?php echo htmlspecialchars( $value1["id_categoria"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><i class="fas fa-pencil"></i></a></td>
                   <td class="actions" data-label="Deletar"><a href="javascript:void(0)" onclick="confirmDelCategorie('<?php echo htmlspecialchars( $value1["id_categoria"], ENT_COMPAT, 'UTF-8', FALSE ); ?>', '<?php echo htmlspecialchars( $value1["nome_categoria"], ENT_COMPAT, 'UTF-8', FALSE ); ?>')"><i class="fas fa-trash"></i></a></td>
                   <td class="actions" data-label="Ver Produtos"><a href="/cardapiodigital/admin/categorie/<?php echo htmlspecialchars( $value1["id_categoria"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><i class="fa-solid fa-square-arrow-up-right"></i></a></td>

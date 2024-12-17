@@ -17,8 +17,8 @@
   border-top: 1px solid #ffffff; }
 
 .produto {
-  max-width: 300px;
-  min-width: 300px;
+  max-width: 280px;
+  min-width: 280px;
   height: auto;
   background-color: #ffffff; }
 
@@ -84,5 +84,16 @@
   gap: 5px;
   background-color: #040420;
   color: #ffffff; }
+
+span.alert-del-produto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #040420;
+  padding: 10px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 8px;
+  color: #f8b008; }
 
 /*# sourceMappingURL=produtosAdmin.css.map */

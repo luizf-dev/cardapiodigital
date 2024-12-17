@@ -32,7 +32,7 @@ class  Produtos extends Connection{
     //! método listar todos os Produtos
     public function listarProdutos(){
 
-        $query = "select * from tb_produtos where status == ativo";
+        $query = "select * from tb_produtos";
         $stmt = $this->database->prepare($query);
         $stmt->execute();
 

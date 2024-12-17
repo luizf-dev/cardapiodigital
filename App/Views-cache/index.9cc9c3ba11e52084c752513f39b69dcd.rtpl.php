@@ -11,7 +11,7 @@
 <?php $counter1=-1;  if( isset($produto) && ( is_array($produto) || $produto instanceof Traversable ) && sizeof($produto) ) foreach( $produto as $nomeCategoria => $produtos ){ $counter1++; ?>
 
     <div class="title-category">
-    <h2><?php echo htmlspecialchars( $nomeCategoria, ENT_COMPAT, 'UTF-8', FALSE ); ?></h2>
+        <h2><?php echo htmlspecialchars( $nomeCategoria, ENT_COMPAT, 'UTF-8', FALSE ); ?></h2>
     </div>
 
     <div class="container-menu">
@@ -43,20 +43,20 @@
 
 
 <!--! Modal oculto! Mostra os detalhes do produto quando solicitado -->
-<div id="modal" class="modal" style="display: none;">    
-  <div class="modal-content">        
-      <div class="modal-body">          
-          <div class="modal-image">
-              <img id="modal-image" src="" alt="Produto" />
-              <button class="btn-close-modal" id="close-modal">X</button>
-          </div>
-          <div class="modal-info">
-              <h4 id="modal-nome"></h4>
-              <p id="modal-descricao"></p>
-              <p id="modal-preco"></p>              
-          </div>
-      </div>
-  </div>
+<div id="modal" class="modal">    
+    <div class="modal-content">        
+        <div class="modal-body">          
+            <div class="modal-image">
+                <img id="modal-image" src="" alt="Produto" />              
+            </div>
+            <div class="modal-info">
+                <h2 id="modal-nome"></h2>
+                <p id="modal-preco"></p> 
+                <p id="modal-descricao"></p>                     
+            </div>
+            <button class="btn-close-modal" id="close-modal">Fechar</button>
+        </div>
+    </div>
 </div>
 
 <!--! Modal oculto! Mostra o conteudo de contato-->

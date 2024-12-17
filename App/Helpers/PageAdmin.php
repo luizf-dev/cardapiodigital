@@ -16,14 +16,14 @@ class PageAdmin {
         "data"=>[]
     ];
 
-    public function __construct($opts = [], $tpl_dir = "App/Views/admin/"){
+    public function __construct($opts = [], $tpl_dir = "../cardapiodigital/App/Views/admin/"){
 
         $this->options = array_merge($this->defaults, $opts);
 
         
         $config = [
             "tpl_dir"=> $tpl_dir,
-            "cache_dir"=> "App/Views-cache/",
+            "cache_dir"=> "../cardapiodigital/App/Views-cache/",
             "debug"=>true
         ];
 

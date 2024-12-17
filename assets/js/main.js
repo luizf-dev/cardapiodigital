@@ -27,7 +27,7 @@ function msgSucesso(msgSucesso){
 //! Essa função abre um modal de confirmação antes da exclusão de algum produto  
 function confirmarExclusao(id, nome) {
 
-    const nomeFormatado = `<span class="alert-delete">${nome}</span>`;
+    const nomeFormatado = `<span class="alert-del-produto">${nome}</span>`;
 
     const deletar = Swal.mixin({
         customClass: {
@@ -42,8 +42,9 @@ function confirmarExclusao(id, nome) {
         text: '',
         html: nomeFormatado,
         showCancelButton: true,
-        confirmButtonText: 'Sim, excluir!',
-        cancelButtonText: 'Não, cancelar!',
+        icon: 'info',
+        confirmButtonText: 'Sim!',
+        cancelButtonText: 'Não!',
         reverseButtons: true
     }).then((result) => {
         if (result.isConfirmed) {
@@ -52,7 +53,7 @@ function confirmarExclusao(id, nome) {
         } else if (result.dismiss === Swal.DismissReason.cancel) {
         deletar.fire(
             'Cancelado',
-            'O produto ' + nomeFormatado + ' não foi excluído.',
+            'O produto não foi excluído.',
             'error'
         );
         }
@@ -62,14 +63,15 @@ function confirmarExclusao(id, nome) {
 //! Essa função abre um modal de confirmação antes da exclusão de alguma categoria
 function confirmDelCategorie(id_categoria, nome_categoria) {
 
-    const nomeFormatado = `<h6 class="alert-delete">${nome_categoria}</h6>`;
-    const alerta = '<span class="alert-delete-categorie">Atenção!!</span><br>';
+    const nomeFormatado = `<h6 class="alert-del-category">${nome_categoria}</h6>`;
+    const alerta = '<span>Atenção!!</span><br>';
+    const textoAlerta = '<span class="texto-alerta">Ao excluir uma categoria, os produtos vinculados a ela serão perdidos!<br/> Deseja mesmo excluir a categoria?</span>';
     
     Swal.fire({
-        title: `${alerta} Ao excluir uma categoria, todos os produtos vinculados a ela serão perdidos! Deseja mesmo excluir a categoria?`,
+        title: `${alerta} ${textoAlerta} `,
         text: '',
         html: nomeFormatado,
-        icon: 'question',
+        icon: 'info',
         showCancelButton: true,
         confirmButtonText: 'Excluir!',
         cancelButtonText: 'Cancelar!',
@@ -82,7 +84,7 @@ function confirmDelCategorie(id_categoria, nome_categoria) {
         } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
             'Cancelado',
-            'Categoria ' + nomeFormatado + ' não foi excluída!',
+            'Categoria não excluída!',
             'error'
         );
         }
