@@ -1,7 +1,7 @@
 <div id="submenu-scroll" class="submenu-scroll">
-    <a href="/cardapiodigital">Home</a>
+    <a href="/">Home</a>
     {loop="$category"}
-      <a href="/cardapiodigital/categorie/{$value.id_categoria}">{$value.nome_categoria}</a>
+      <a href="/categorie/{$value.id_categoria}">{$value.nome_categoria}</a>
     {/loop}
 </div>
 
@@ -19,9 +19,9 @@
             </div>
             <div class="card-menu-img">
                 {if="$value.imagem != ''"}
-                    <img src="/cardapiodigital/assets/img/uploads/{$value.imagem}" alt="">
+                    <img src="/assets/img/uploads/{$value.imagem}" alt="">
                 {else}
-                    <img src="/cardapiodigital/assets/img/uploads/imagem-padrao.jpeg" alt="">
+                    <img src="/assets/img/uploads/imagem-padrao.jpeg" alt="">
                 {/if}
             </div>
         </div>  

@@ -41,20 +41,20 @@ class CadastrarCategoriaController {
 
             Mensagens::setMsgErro('Preencha os campos corretamente!');
 
-            header('Location: /cardapiodigital/admin/newCategorie');
+            header('Location: /admin/newCategorie');
             exit;
         }
 
         if($categoria->cadastrarCategoria()){
 
             Mensagens::setMsgSucesso('Categoria cadastrada com sucesso!');
-            header('Location: /cardapiodigital/admin/categories');
+            header('Location: /admin/categories');
             exit;
 
     }else{
 
             Mensagens::setMsgErro('Não foi possível cadastrar! Tente novamente!');
-            header('Location: /cardapiodigital/admin/newCategorie');
+            header('Location: /admin/newCategorie');
         }  
     }
 }

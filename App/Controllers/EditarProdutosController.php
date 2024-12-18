@@ -62,7 +62,7 @@ class EditarProdutosController {
 
             Mensagens::setMsgErro('Campos em branco, não é possível atualizar!');
 
-            header("Location: /cardapiodigital/admin/atualizar-produto/$id");
+            header("Location: /admin/atualizar-produto/$id");
             exit;
         }
 
@@ -70,14 +70,14 @@ class EditarProdutosController {
 
             Mensagens::setMsgSucesso('Produto atualizado com sucesso!');
 
-            header("Location: /cardapiodigital/admin/categorie/$id_categoria");
+            header("Location: /admin/categorie/$id_categoria");
             exit;
 
         }else{
         
             Mensagens::setMsgErro('Não foi possível atualizar o produto!');
 
-            header("Location: /cardapiodigital/admin/atualizar-produto/$id");
+            header("Location: /admin/atualizar-produto/$id");
             exit();
         }  
     }

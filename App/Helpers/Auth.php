@@ -3,7 +3,6 @@
 namespace App\Helpers;
 
 use App\Helpers\Mensagens;
-use App\Models\User;
 
 class Auth {
 
@@ -28,7 +27,7 @@ class Auth {
         if(!$user){
 
             Mensagens::setMsgErro('Efetue seu login!');            
-            header('Location: /cardapiodigital/admin');
+            header('Location: /admin');
             exit();
         }
     }

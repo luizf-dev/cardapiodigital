@@ -29,13 +29,13 @@ class DeletarProdutosController {
         if($produto->deletarProduto($id)){
 
             Mensagens::setMsgSucesso('Produto excluído com sucesso!');
-            header("Location: /cardapiodigital/admin/categorie/$id_categoria");
+            header("Location: /admin/categorie/$id_categoria");
             exit;
 
         }else{
             
             Mensagens::setMsgSucesso('Não foi possível deletar este produto! Tente novamente!');
-            header("Location:  /cardapio_online/admin/categorie/$id_categoria");
+            header("Location:  /admin/categorie/$id_categoria");
             exit;
         }
     }

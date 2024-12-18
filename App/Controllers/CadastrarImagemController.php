@@ -57,7 +57,7 @@ class CadastrarImagemController {
         if(!in_array(strtolower($extensao), $extensoesPermitidas)){
             
             Mensagens::setMsgErro('Apenas arquivos JPEG, JPG e PNG são permitidos!');
-            header("Location: /cardapiodigital/admin/cadastrar-imagem/$id");
+            header("Location: /admin/cadastrar-imagem/$id");
             exit;
         }
 
@@ -109,13 +109,13 @@ class CadastrarImagemController {
         if($produto->cadastrarImagem($id, $novoNomeImagem)){
 
             Mensagens::setMsgSucesso('A imagem foi cadastrada com sucesso!');
-            header("Location: /cardapiodigital/admin/categorie/$id_categoria");
+            header("Location: /admin/categorie/$id_categoria");
             exit;
 
         }else{
 
             Mensagens::setMsgErro('Erro ao cadastrar a imagem!');
-            header("Location: /cardapiodigital/admin/categorie/$id_categoria");
+            header("Location: /admin/categorie/$id_categoria");
             exit;
         } 
     }

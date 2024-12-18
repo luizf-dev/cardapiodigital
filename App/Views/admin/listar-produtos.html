@@ -18,9 +18,9 @@
                     <div class="dados-produto">                             
                         <div class="img-produto">
                             {if="$value.imagem != ''"}
-                                <img id="product-image-{$value.id}" src="/cardapiodigital/assets/img/uploads/{$value.imagem}" alt="food">
+                                <img id="product-image-{$value.id}" src="/assets/img/uploads/{$value.imagem}" alt="food">
                             {else}
-                                <img src="/cardapiodigital/assets/img/uploads/imagem-padrao.jpeg" alt="">
+                                <img src="/assets/img/uploads/imagem-padrao.jpeg" alt="">
                             {/if}
                         </div>
                         <div class="info">
@@ -39,11 +39,11 @@
                         </div>
                     </div>
                     <div class="actions-produtos">
-                        <a class="btns" href="/cardapiodigital/admin/cadastrar-imagem/{$value.id}">                             
+                        <a class="btns" href="/admin/cadastrar-imagem/{$value.id}">                             
                             <i class="fa-solid fa-image"></i> 
                             Atualizar Imagem
                         </a>
-                        <a class="btns" href="/cardapiodigital/admin/atualizar-produto/{$value.id}">
+                        <a class="btns" href="/admin/atualizar-produto/{$value.id}">
                             <i class="fa-solid fa-pen-to-square"></i>                       
                             Atualizar Produto
                         </a>
@@ -57,7 +57,7 @@
         {else}
             <div class="msg-category">
                 <p>Ainda não existem produtos cadastrados.</p>
-                <a class="btn" href="/cardapiodigital/admin/cadastrar-produto">Cadastre aqui!</a>
+                <a class="btn" href="/admin/cadastrar-produto">Cadastre aqui!</a>
             </div>
         {/if}
     </div>

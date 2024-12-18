@@ -42,13 +42,13 @@ class LoginController {
             $_SESSION['id'] = $dadosUsuario['id'];
             $_SESSION['username'] = $dadosUsuario['username'];      
     
-            header('Location: /cardapiodigital/admin/home');
+            header('Location: /admin/home');
             exit();
     
         }else {
 
             Mensagens::setMsgErro('Algo saiu mal com o login! :( ');
-            header('Location: /cardapiodigital/admin');
+            header('Location: /admin');
             exit();
         } 
     }
@@ -62,7 +62,7 @@ class LoginController {
         // destroi a sessão
         session_destroy();
 
-        header('Location: /cardapiodigital/admin');
+        header('Location: /admin');
         exit();
     }
 }

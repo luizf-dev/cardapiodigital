@@ -41,12 +41,12 @@ class EditarCategoriaController {
         if($categoria->atualizarCategoria($id_categoria, $nome_categoria, $status, $exibir_na_home)){
 
             Mensagens::setMsgSucesso('Categoria atualizada com sucesso!');
-            header('Location:  /cardapiodigital/admin/categories');
+            header('Location: /admin/categories');
             exit();
         }else{
             
             Mensagens::setMsgErro('Não foi possível atualizar a categoria!');
-            header('Location: /cardapiodigital/admin/categories');
+            header('Location: /admin/categories');
             exit();
         }
     }

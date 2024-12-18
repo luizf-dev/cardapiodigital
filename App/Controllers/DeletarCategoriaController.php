@@ -24,14 +24,14 @@ class DeletarCategoriaController {
 
             Mensagens::setMsgSucesso('Categoria excluída com sucesso!');
 
-            header('Location: /cardapiodigital/admin/categories');
+            header('Location: /admin/categories');
             exit;
 
         }else{
 
             Mensagens::setMsgErro('Não foi possível deletar! Tente novamente!');
 
-            header('Location:  /cardapiodigital/admin/categories');
+            header('Location: /admin/categories');
             exit;
         }
     }

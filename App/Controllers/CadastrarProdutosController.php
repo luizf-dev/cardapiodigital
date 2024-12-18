@@ -56,7 +56,7 @@ class CadastrarProdutosController {
     
             Mensagens::setMsgErro('Preencha os campos corretamente!');
     
-            header('Location: /cardapiodigital/admin/cadastrar-produto');
+            header('Location: /admin/cadastrar-produto');
             exit;
         }
     
@@ -64,14 +64,14 @@ class CadastrarProdutosController {
     
             Mensagens::setMsgSucesso('Produto cadastrado com sucesso!');
     
-            header("Location: /cardapiodigital/admin/categorie/$id_categoria");
+            header("Location: /admin/categorie/$id_categoria");
             exit;
     
        }else{
     
             Mensagens::setMsgErro('Não foi possível cadastrar o produto! Tente novamente!');
     
-            header('Location: /cardapiodigital/admin/cadastrar-produto');
+            header('Location: /admin/cadastrar-produto');
             exit;
        } 
     }
