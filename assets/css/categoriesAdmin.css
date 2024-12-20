@@ -3,8 +3,8 @@
 
 .table-container h3 {
   margin-top: 80px;
-  background-color: #040420;
-  color: #f8b008;
+  background-color: #5600CF;
+  color: #EBAC31;
   width: 100%;
   text-align: center;
   padding: 10px;
@@ -13,19 +13,19 @@
 
 .table {
   width: 100%;
-  background-color: #8294b6;
+  background-color: #DEDCFB;
   border-collapse: collapse;
   margin: 0 auto;
   box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4); }
 
 .table thead {
-  background-color: #1d355b; }
+  background-color: #260259; }
 
 .table thead tr th {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.35px;
-  color: #ffffff;
+  color: #DEDCFB;
   opacity: 1;
   padding: 12px;
   vertical-align: top;
@@ -69,7 +69,7 @@
   font-size: 1.3rem; }
 
 .fa-pencil, .fa-trash, .fa-square-arrow-up-right {
-  color: #040420;
+  color: #5600CF;
   font-size: 1.4rem;
   min-width: 100%;
   min-height: 100%; }
@@ -84,7 +84,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #040420;
+  background-color: #5600CF;
   padding: 10px;
   width: 100%;
   margin: 0 auto;
@@ -103,7 +103,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #040420;
+  background-color: #5600CF;
   width: 200px;
   height: 40px;
   padding: 10px;

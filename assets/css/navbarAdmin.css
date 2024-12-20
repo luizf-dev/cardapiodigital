@@ -10,7 +10,7 @@
   top: 0;
   width: 100%;
   height: 70px;
-  background-color: #040420;
+  background-color: #5600CF;
   position: fixed;
   z-index: 1; }
 
@@ -18,10 +18,10 @@
   color: #ffffff; }
 
 .top-bar span {
-  color: #f8b008; }
+  color: #EBAC31; }
 
 .side-bar {
-  background: #040420;
+  background: #5600CF;
   backdrop-filter: blur(15px);
   width: 250px;
   height: 100vh;
@@ -64,7 +64,8 @@
   line-height: 50px; }
 
 .side-bar .menu .item a:hover {
-  background-color: #8294b6;
+  background-color: #DEDCFB;
+  color: #5600CF;
   transition: 0.3s ease; }
 
 .side-bar .menu .item i {
@@ -105,10 +106,10 @@ img.img-user {
   margin: 15px;
   border-radius: 50%;
   margin-left: 70px;
-  background-color: #8294b6; }
+  background-color: #DEDCFB; }
 
 header {
-  background-color: #040420;
+  background-color: #5600CF;
   border-bottom: 1px solid #ffffff; }
 
 /*# sourceMappingURL=navbarAdmin.css.map */

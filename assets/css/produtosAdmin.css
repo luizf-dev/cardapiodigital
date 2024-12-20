@@ -12,15 +12,16 @@
   align-items: center;
   margin-top: 70px;
   height: 70px;
-  background-color: #040420;
-  color: #f8b008;
+  background-color: #5600CF;
+  color: #EBAC31;
   border-top: 1px solid #ffffff; }
 
 .produto {
   max-width: 280px;
   min-width: 280px;
   height: auto;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8); }
 
 .dados-produto {
   display: flex;
@@ -44,7 +45,7 @@
 .info .nome-produto, .info .preco, .info .descricao,
 .info .status, .info .categoria, .info .date {
   font-size: 1rem;
-  color: #040420;
+  color: #5600CF;
   font-weight: 900;
   white-space: nowrap;
   overflow: hidden;
@@ -82,14 +83,14 @@
   align-items: center;
   height: 40px;
   gap: 5px;
-  background-color: #040420;
+  background-color: #5600CF;
   color: #ffffff; }
 
 span.alert-del-produto {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #040420;
+  background-color: #5600CF;
   padding: 10px;
   width: 100%;
   margin: 0 auto;
