@@ -5,8 +5,8 @@
   max-width: 600px;
   padding: 10px;
   background-color: #ffffff;
-  border-top: 5px solid #040420;
-  border-bottom: 5px solid #040420;
+  border-top: 5px solid #5600CF;
+  border-bottom: 5px solid #5600CF;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -37,7 +37,7 @@
   height: 30px; }
 
 .input-group input:focus {
-  border: solid 1px #040420; }
+  border: solid 1px #5600CF; }
 
 .input-group textarea {
   padding: .5rem;
@@ -45,20 +45,20 @@
   height: 70px; }
 
 .input-group textarea:focus {
-  border: solid 1px #040420; }
+  border: solid 1px #5600CF; }
 
 .input-group select {
   padding: .5rem;
   outline: none;
-  border: 1px solid #8294b6;
-  background-color: #8294b6;
+  border: 1px solid #DEDCFB;
+  background-color: #DEDCFB;
   height: 40px; }
 
 .input-group select:focus {
-  border: solid 1px #040420; }
+  border: solid 1px #5600CF; }
 
 .input-group input[type="file"] {
-  border: 1px solid #040420;
+  border: 1px solid #5600CF;
   padding: 10px;
   height: 40px; }
 
@@ -70,7 +70,7 @@
   height: 50px;
   border: none;
   width: 100%;
-  background-color: #040420;
+  background-color: #5600CF;
   color: #ffffff;
   cursor: pointer; }
 
@@ -85,7 +85,7 @@ label.active {
   text-transform: capitalize;
   width: 100%;
   padding: 10px;
-  color: #040420; }
+  color: #5600CF; }
 
 label.disabled {
   display: flex;
@@ -95,7 +95,7 @@ label.disabled {
   text-transform: capitalize;
   width: 100%;
   padding: 10px;
-  color: #040420; }
+  color: #5600CF; }
 
 @media screen and (max-width: 786px) {
   .form-add {

@@ -8,10 +8,13 @@
   width: 100%;
   padding: 10px;
   height: 100vh;
-  background-color: #8294b6; }
+  background-color: #DEDCFB; }
+
+.container-login h1 {
+  color: #5600CF; }
 
 .container-login h1 span {
-  color: #281604; }
+  color: #EBAC31; }
 
 .formLogin {
   display: flex;
@@ -41,7 +44,7 @@
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid #8294b6;
+  border: 1px solid #DEDCFB;
   margin-bottom: 20px;
   margin-top: 5px;
   transition: all linear 160ms;
@@ -50,7 +53,7 @@
   /* Espaço para o ícone */ }
 
 .formLogin input:focus {
-  border: 1px solid #040420; }
+  border: 1px solid #5600CF; }
 
 .formLogin i {
   font-size: 1.2rem; }
@@ -60,7 +63,7 @@
   top: 40%;
   right: 12px;
   transform: translateY(-50%);
-  color: #040420;
+  color: #5600CF;
   pointer-events: none; }
 
 .formLogin a:hover {
@@ -70,7 +73,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #040420;
+  background-color: #5600CF;
   color: #ffffff;
   font-size: 14px;
   font-weight: 600;
