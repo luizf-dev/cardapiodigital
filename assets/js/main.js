@@ -197,8 +197,8 @@ btnCloseModalContato.addEventListener('click', () => {
 });
 
 
-//transições suaves entre páginas
-document.addEventListener('DOMContentLoaded', () => {
+//transições suaves entre páginas - Em fase de teste
+/*document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('a'); // Selecione todos os links
    
 
@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 600); // Tempo da animação (0.5s)
         });
     });
-});
+});*/
 
 
 

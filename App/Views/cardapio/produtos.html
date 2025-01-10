@@ -10,7 +10,7 @@
 <div class="container-menu">
     {loop="$produtos"}
         <div class="card-menu">
-            <a class="btn-detalhes" data-id="{$value.id}" data-nome="{$value.nome}" data-descricao="{$value.descricao}" data-imagem="../assets/img/uploads/{$value.imagem}" data-preco='R$ {function="formatarPreco($value.preco)"}'>
+            <a class="btn-detalhes" data-id="{$value.id}" data-nome="{$value.nome}" data-descricao="{$value.descricao}" data-imagem="/assets/img/uploads/{$value.imagem}" data-preco='R$ {function="formatarPreco($value.preco)"}'>
                 <div class="card-menu-info">
                     <h3 class="menu-item-title">{$value.nome}</h3>
                     <p class="menu-item-description">
