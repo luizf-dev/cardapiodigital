@@ -42,8 +42,8 @@ html {
 
 .card-menu {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
   border-left: 5px solid #f8b008; }
 
@@ -68,10 +68,11 @@ html {
 .btn-detalhes {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   font-size: 1.3rem;
   border: none;
   cursor: pointer;
-  background-color: transparent; }
+  width: 100%; }
 
 .btn-detalhes i {
   color: #f8b008; }
@@ -107,7 +108,7 @@ html {
     height: 250px; }
 
   .card-menu {
-    width: 100%;
+    width: 320px;
     padding: 5px; }
 
   .card-menu-info {

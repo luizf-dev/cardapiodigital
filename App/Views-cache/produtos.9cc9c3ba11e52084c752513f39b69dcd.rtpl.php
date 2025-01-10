@@ -12,14 +12,16 @@
 <div class="container-menu">
     <?php $counter1=-1;  if( isset($produtos) && ( is_array($produtos) || $produtos instanceof Traversable ) && sizeof($produtos) ) foreach( $produtos as $key1 => $value1 ){ $counter1++; ?>
 
-        <div class="card-menu">
+    <div class="card-menu">
+        <a class="btn-detalhes" data-id="<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-nome="<?php echo htmlspecialchars( $value1["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-descricao="<?php echo htmlspecialchars( $value1["descricao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-imagem="../assets/img/uploads/<?php echo htmlspecialchars( $value1["imagem"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-preco='R$ <?php echo formatarPreco($value1["preco"]); ?>'>
             <div class="card-menu-info">
                 <h3 class="menu-item-title"><?php echo htmlspecialchars( $value1["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h3>
                 <p class="menu-item-description">
                     <?php echo htmlspecialchars( $value1["descricao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
 
                 </p>
-                <button class="btn-detalhes" data-id="<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-nome="<?php echo htmlspecialchars( $value1["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-descricao="<?php echo htmlspecialchars( $value1["descricao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-imagem="../assets/img/uploads/<?php echo htmlspecialchars( $value1["imagem"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-preco='R$ <?php echo formatarPreco($value1["preco"]); ?>'><span><i class="fa-solid fa-circle-plus"></i> Detalhes...</span></button>
+                <span><i class="fa-solid fa-circle-plus"></i> Detalhes...</span>
+                <!-- <button class="btn-detalhes" data-id="<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-nome="<?php echo htmlspecialchars( $value1["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-descricao="<?php echo htmlspecialchars( $value1["descricao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-imagem="assets/img/uploads/<?php echo htmlspecialchars( $value1["imagem"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-preco='R$ <?php echo formatarPreco($value1["preco"]); ?>'><span><i class="fa-solid fa-circle-plus"></i> Detalhes...</span></button> -->
             </div>
             <div class="card-menu-img">
                 <?php if( $value1["imagem"] != '' ){ ?>
@@ -31,7 +33,8 @@
                 <?php } ?>
 
             </div>
-        </div>  
+        </a> 
+    </div>   
     <?php } ?>  
 </div>
 
