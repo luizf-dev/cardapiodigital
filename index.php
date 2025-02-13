@@ -5,6 +5,7 @@ session_start();
 //!Carregamento automatico das classes
 require_once 'vendor/autoload.php';
 require_once './App/Helpers/Funcoes.php';
+//ajustando tudo
 
 use App\Controllers\CadastrarCategoriaController;
 use App\Controllers\CadastrarImagemController;
@@ -189,6 +190,8 @@ $app->post('/admin/cadastrar-imagem/{id}', function($request, $response, $args){
     $controller->cadastrarImagemPost($id);
     return $response;
 });
+
+
 
 
 $app->run();

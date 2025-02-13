@@ -197,27 +197,6 @@ btnCloseModalContato.addEventListener('click', () => {
 });
 
 
-//transições suaves entre páginas - Em fase de teste
-/*document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('a'); // Selecione todos os links
-   
-
-    links.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault(); // Previne o comportamento padrão
-            const url = link.href; // Obtém a URL do link
-
-            
-            // Adiciona a classe de animação de saída
-            document.body.classList.add('fade-out');    
-
-            // Aguarda a animação terminar antes de navegar
-            setTimeout(() => {
-                window.location.href = url;
-            }, 600); // Tempo da animação (0.5s)
-        });
-    });
-});*/
 
 
 
