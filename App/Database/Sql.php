@@ -7,8 +7,8 @@ use PDOException;
 class Sql {
 
     const HOSTNAME = "srv1897.hstgr.io";
-	const USERNAME = "u895071941_usercardapio";
-	const DBNAME = "u895071941_cardapio";
+	const USERNAME = "u895071941_cardapio";
+	const DBNAME = "u895071941_db_cardapio";
 	const PASSWORD = "Bfg4fgl37";
 	
 
