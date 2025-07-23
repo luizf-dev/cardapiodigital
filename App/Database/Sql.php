@@ -6,10 +6,11 @@ use PDOException;
 
 class Sql {
 
-    const HOSTNAME = "sql108.infinityfree.com";
-	const USERNAME = "if0_37899221";
-	const PASSWORD = "JUT9QYu5vMCuoN";
-	const DBNAME = "if0_37899221_db_cardapioDigital";
+    const HOSTNAME = "srv1897.hstgr.io";
+	const USERNAME = "u895071941_usercardapio";
+	const DBNAME = "u895071941_cardapio";
+	const PASSWORD = "Bfg4fgl37";
+	
 
 
     public static function getDatabase() {
