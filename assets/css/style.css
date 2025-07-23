@@ -38,7 +38,8 @@ html {
   color: #281604; }
 
 .banner-home {
-  height: 600px; }
+  height: 300px; 
+}
 
 .card-menu {
   display: flex;
