@@ -37,10 +37,6 @@ html {
   margin: 30px auto;
   color: #281604; }
 
-.banner-home {
-  height: 300px; 
-}
-
 .card-menu {
   display: flex;
   align-items: center;

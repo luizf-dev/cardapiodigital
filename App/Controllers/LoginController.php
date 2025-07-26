@@ -42,7 +42,7 @@ class LoginController {
             $_SESSION['id'] = $dadosUsuario['id'];
             $_SESSION['username'] = $dadosUsuario['username'];      
     
-            header('Location: /admin/home');
+            header('Location: /admin/categories');
             exit();
     
         }else {

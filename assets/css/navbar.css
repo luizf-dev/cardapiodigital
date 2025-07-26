@@ -26,7 +26,7 @@ nav ul li img {
 img.banner-home {
   width: 100%;
   margin-top: 70px;
-  max-height: 100vh;
+  max-height: 400px;
   object-fit: cover; }
 
 .submenu-scroll {
@@ -45,17 +45,20 @@ img.banner-home {
   width: 100%;
   top: 70px;
   left: 0;
+  height: 100px;
   transition: all 0.5s ease-in-out; }
 
 .submenu-scroll a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #f8b008;
-  padding: 15px;
-  height: 50px;
-  min-width: 200px;
+  height: 30px;
+  min-width: 150px;
   text-align: center;
-  border-radius: 8px;
+  border-radius: 4px;
   box-shadow: 1px 1px 8px #000;
   color: #281604;
-  font-weight: 700; }
+  font-size: 0.8rem; }
 
 /*# sourceMappingURL=navbar.css.map */

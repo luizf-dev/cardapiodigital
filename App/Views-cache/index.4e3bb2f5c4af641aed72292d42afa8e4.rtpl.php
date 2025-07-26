@@ -65,14 +65,17 @@
 <!--! Modal oculto! Mostra o conteudo de contato-->
 <div id="modal-contato" class="modal-contato" style="display: none;">    
     <div class="modal-contato-content">
-        <button class="btn-close-modal-contato" id="close-modal-contato">X</button>        
-        <div class="modal-contato-body">
-            <img src="assets/img/imagens/logo-restaurante.png" alt="logo">
-            <span><i class="fa-solid fa-location-dot"></i> Rua Nome da rua, 2569, Bairro, Cidade, Estado, País</span>
-            <span><i class="fa-solid fa-phone"></i> 44 9156-8796</span>
-            <span><i class="fa-solid fa-envelope"></i> teste@email.com.br</span>
-            <span><i class="fa-brands fa-instagram"></i> @_instagram</span>
-            <span><i class="fa-solid fa-globe"></i> www.seusite.com.br</span>
+        <button class="btn-close-modal-contato" id="close-modal-contato">X</button>             
+        <div class="modal-contato-body">     
+            <p>Sua logo aqui <i class="fa-solid fa-arrow-down"></i></p>
+            <img src="assets/img/imagens/logo.png" alt="logo">        
+            <div class="dados-contato">
+                <span><i class="fa-solid fa-location-dot"></i> Nome da rua - 2569, Bairro, Cidade, Estado</span>
+                <span><i class="fa-brands fa-whatsapp"></i> (47) 99156-8796</span>
+                <span><i class="fa-solid fa-envelope"></i> teste@email.com.br</span>
+                <span><i class="fa-brands fa-instagram"></i> @_instagram</span>
+                <span><i class="fa-solid fa-globe"></i> www.seusite.com.br</span>
+            </div>
         </div>
     </div>
 </div>
