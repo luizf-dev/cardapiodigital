@@ -11,7 +11,7 @@
     <form method="POST" action="/admin" class="formLogin">
         <h3>Faça seu login</h3>
         <div>
-            <input type="text" name="username" placeholder="Digite seu nome de usuário" autofocus="true" />
+            <input type="text" name="email" placeholder="Digite seu endereço de email" autofocus="true" />
             <span><i class="fa-solid fa-user"></i></span>
         </div>
         <div>

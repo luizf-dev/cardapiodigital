@@ -14,7 +14,7 @@ class HomeAdminController {
 
         Auth::verifyLogin();
 
-        $username = $_SESSION['username'];
+        $username = $_SESSION['email'];
 
         //!conexao com a base de dados
         $connect = Sql::getDatabase();

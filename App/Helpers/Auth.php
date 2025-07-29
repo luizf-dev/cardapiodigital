@@ -8,25 +8,24 @@ class Auth {
 
     public static function verificarSessao(){
 
-        if(isset($_SESSION['username']) && $_SESSION['username'] != ""){
+        if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario'])) {
 
-            $username = $_SESSION['username'];
+            return [
+                'id' => $_SESSION['id_usuario'],               
+                'email' => $_SESSION['email']
+            ]; // retorna o ID do usuário logado
 
-            return $username;
-
-        }else{
-
+        } else {
             return false;
         }
     }
 
     public static function verifyLogin(){
 
-        $user = Auth::verificarSessao();
+        $idUsuario = self::verificarSessao();
 
-        if(!$user){
-
-            Mensagens::setMsgErro('Efetue seu login!');            
+        if (!$idUsuario) {
+            Mensagens::setMsgErro('Efetue seu login!');
             header('Location: /admin');
             exit();
         }
