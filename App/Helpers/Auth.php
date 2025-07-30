@@ -12,7 +12,8 @@ class Auth {
 
             return [
                 'id' => $_SESSION['id_usuario'],               
-                'email' => $_SESSION['email']
+                'email' => $_SESSION['email'],
+                'nome_estabelecimento' => $_SESSION['nome_estabelecimento']
             ]; // retorna o ID do usuário logado
 
         } else {

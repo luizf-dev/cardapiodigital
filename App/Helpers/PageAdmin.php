@@ -31,7 +31,12 @@ class PageAdmin {
 
         $this->tpl = new Tpl;
 
-        $this->setData($this->options["data"]);
+        //$this->setData($this->options["data"]);
+
+        // Adiciona automaticamente o username da sessão
+       $this->setData(array_merge($this->options["data"], [
+            "nome_estabelecimento" => isset($_SESSION['nome_estabelecimento']) ? $_SESSION['nome_estabelecimento'] : null
+        ]));
 
         if($this->options["adminHeader"] == true) $this->tpl->draw("adminHeader");
 

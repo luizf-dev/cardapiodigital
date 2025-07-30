@@ -20,6 +20,30 @@
 .top-bar span {
   color: #EBAC31; }
 
+.navbar .salute {
+  font-size: 0.8rem;
+  position: absolute;
+  left: 0;
+  top: 45px; }
+
+.salute {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 0 10px 0;
+  gap: 10px;
+  color: #fff;
+  font-weight: 900; }
+
+.logout {
+  position: absolute;
+  right: 10px; }
+
+.logout a i {
+  color: #EBAC31;
+  font-size: 1.5rem; }
+
 .side-bar {
   background: #5600CF;
   backdrop-filter: blur(15px);
@@ -111,5 +135,22 @@ img.img-user {
 header {
   background-color: #5600CF;
   border-bottom: 1px solid #ffffff; }
+
+.nome-estabelecimento {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; }
+
+.nome-estabelecimento p {
+  color: white;
+  margin-bottom: 10px; }
+
+@media screen and (max-width: 468px) {
+  .navbar .salute {
+    font-size: 0.5rem;
+    position: absolute;
+    left: -99px;
+    top: 56px; } }
 
 /*# sourceMappingURL=navbarAdmin.css.map */

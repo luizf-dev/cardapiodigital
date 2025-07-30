@@ -1,7 +1,31 @@
         <script>
+
+
+            // Nome do usuário vindo do backend
+            const userFullName = "{$nome_estabelecimento}";       
+
+
+            // Divide o nome completo para pegar o primeiro nome
+           //const firstName = userFullName.split(' ')[0];
+
+            // Saudação dinâmica com base no horário
+            const currentHour = new Date().getHours();
+            let salute;
+
+            if (currentHour < 12) {
+                salute = "Bom dia";
+            } else if (currentHour < 18) {
+                salute = "Boa tarde";
+            } else {
+                salute = "Boa noite";
+            }
+
+            // Exibe a saudação com o primeiro nome
+            const userSalute = `${salute}, ${userFullName}!`;
+            document.getElementById("salute").textContent = userSalute;
             
             //sidebar Admin 
-            $(document).ready(function(){
+         /*  $(document).ready(function(){
                 //jquery for toggle sub menus
                 $('.sub-btn').click(function(){
                 $(this).next('.sub-menu').slideToggle();
@@ -19,6 +43,7 @@
                 $('.menu-btn').css("visibility", "visible");
                 });
             });
+        */            
 
              //!mascara para preenchimento do input de preço do produto
              const inputPreco = document.getElementById('preco');
@@ -39,7 +64,8 @@
 
             //Atualiza o valor no input
             inputPreco.value = valorEmReais;
-            });
+            });        
+
         </script>
     </body>
 </html>

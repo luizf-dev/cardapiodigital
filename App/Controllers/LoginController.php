@@ -53,8 +53,8 @@ class LoginController {
         if ($dadosUsuario && password_verify($password, $dadosUsuario['password'])) {
 
             // Salvando dados essenciais na sessão
-            $_SESSION['id_usuario'] = $dadosUsuario['id'];
-            $_SESSION['email'] = $dadosUsuario['email'];            
+            $_SESSION['id_usuario'] = $dadosUsuario['id'];            
+            $_SESSION['nome_estabelecimento'] = $dadosUsuario['nome_estabelecimento'];           
 
             header('Location: /admin/categories');
             exit();

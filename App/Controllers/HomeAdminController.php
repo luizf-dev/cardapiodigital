@@ -14,19 +14,12 @@ class HomeAdminController {
 
         Auth::verifyLogin();
 
-        $username = $_SESSION['email'];
-
-        //!conexao com a base de dados
-        $connect = Sql::getDatabase();
-
-        //! Instancia de um novo objeto Produtos, passando a conexao com o banco de dados
-        //$produtos = new Produtos($connect);
-        //$produtos = $produtos->listarProdutos();
+        $username = $_SESSION['nome_estabelecimento'];
+        
 
         $page = new PageAdmin();
         $page->renderPage("home", [
-           "username" => $username,
-           // "produtos" => $produtos
+           "username" => $username,           
         ]);
     }
 }

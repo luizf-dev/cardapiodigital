@@ -192,7 +192,4 @@ $app->post('/admin/cadastrar-imagem/{id}', function($request, $response, $args){
 });
 
 
-//teste github
-
-
 $app->run();

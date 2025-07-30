@@ -23,7 +23,7 @@ class User extends Connection {
     //! Autenticar usuário com base no e-mail
     public function autenticarUsuario(){
 
-        $query = "SELECT id, email, password FROM tb_usuarios WHERE email = :email";
+        $query = "SELECT id, email, password, nome_estabelecimento  FROM tb_usuarios WHERE email = :email";
         $stmt = $this->database->prepare($query);
         $stmt->bindValue(':email', $this->__get('email'));
         $stmt->execute();

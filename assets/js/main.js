@@ -1,3 +1,49 @@
+//! Fecha a sidebar ao clicar fora dela ou deslizar para a esquerda
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const menuBtn = document.querySelector(".menu-btn");
+    const closeBtn = document.querySelector(".close-btn");
+    const sideBar = document.querySelector(".side-bar");
+
+    // Abrir o menu ao clicar no botão
+    menuBtn.addEventListener("click", function () {
+    sideBar.classList.add("active");
+    });
+
+    // Fechar o menu ao clicar no botão de fechar
+    closeBtn.addEventListener("click", function () {
+    sideBar.classList.remove("active");
+    });
+
+    // Fechar o menu ao clicar fora dele
+    document.addEventListener("click", function (event) {
+    if (!sideBar.contains(event.target) && !menuBtn.contains(event.target)) {
+        sideBar.classList.remove("active");
+    }
+    });
+
+    // Detectar swipe (deslizar para a esquerda) em dispositivos móveis
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener("touchstart", function (event) {
+    touchStartX = event.touches[0].clientX;
+    });
+
+    document.addEventListener("touchmove", function (event) {
+    touchEndX = event.touches[0].clientX;
+    });
+
+    document.addEventListener("touchend", function () {
+    // Se o usuário arrastar para a esquerda (sentido negativo)
+    if (touchStartX - touchEndX > 50) {
+        sideBar.classList.remove("active");
+    }
+    });
+});
+
+
+
 //! Msg para alertas de erro 
 function msgErro(msgErro){
     Swal.fire({
@@ -195,6 +241,9 @@ btnCloseModalContato.addEventListener('click', () => {
 
     modalContato.style.display = 'none';
 });
+
+
+
 
 
 

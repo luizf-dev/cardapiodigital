@@ -5,6 +5,12 @@
   <div>
     <h3>Epic Food <span>Admin</span></h3>
   </div>
+  <div class="navbar">     
+    <div class="salute" id="salute"></div>
+  </div>
+  <div class="logout">
+    <a href="/admin/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+  </div>
 </div>
 
 <div class="side-bar">
@@ -13,7 +19,9 @@
           <i class="fas fa-times"></i>
         </div>
         <img class="img-user" src="/assets/img/imagens/icon-admin.png" alt="img-user">
-        <h1>Epic Food</h1>
+        <div class="nome-estabelecimento">
+          <p>{$nome_estabelecimento}</p>
+        </div>
     </header>
     <div class="menu">
       <div class="item"><a href="/admin/home"><i class="fa-solid fa-house"></i> Home</a></div>
