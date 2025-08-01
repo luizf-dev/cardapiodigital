@@ -15,40 +15,43 @@
   <h3>Categorias</h3>
   <table class="table">
       <thead>
-          <tr>
-              <th>Nome Categoria</th>
-              <th>Status</th>
-              <th>Data Cadastro</th>
-              <th>Data Atualização</th>
-              <th>Editar</th>
-              <th>Deletar</th>
-              <th>Ver Produtos</th>
-              <th>Exibido na Home</th>
-          </tr>
+        <tr>
+            <th>Nome Categoria</th>
+            <th>Status</th>
+            <th>Exibido na Home</th>
+            <th>Ver Produtos</th>
+            <th>Data Cadastro</th>
+            <th>Data Atualização</th>
+            <th>Editar</th>
+            <th>Deletar</th>            
+            
+        </tr>
       </thead>
       <tbody>        
-          {loop="$category"}
-              <tr>              
-                  <td class="nome-categoria" data-label="Nome Categoria"><span>{$value.nome_categoria}</span></td>
-                  {if="$value.status == 'ativo'"}
-                    <td class="status" data-label="Status">{$value.status} <i class="fa-solid fa-circle-check"></i></td>
-                  {/if}
-                  {if="$value.status == 'inativo'"}
-                    <td class="status" data-label="Status">{$value.status} <i class="fa-solid fa-circle-xmark"></i></td>
-                  {/if}              
-                  <td class="dt-cad" data-label="Data-Cadastro">{function="formatarData($value.data_criacao)"}</td>
-                  <td class="dt-update" data-label="Data-Atualização">{function="formatarData($value.data_atualizacao)"}</td>
-                  <td class="actions" data-label="Editar"><a href="/admin/atualizar-categoria/{$value.id_categoria}"><i class="fas fa-pencil"></i></a></td>
-                  <td class="actions" data-label="Deletar"><a href="javascript:void(0)" onclick="confirmDelCategorie('{$value.id_categoria}', '{$value.nome_categoria}')"><i class="fas fa-trash"></i></a></td>
-                  <td class="actions" data-label="Ver Produtos"><a href="/admin/categorie/{$value.id_categoria}"><i class="fa-solid fa-square-arrow-up-right"></i></a></td>
-                  {if="$value.exibir_na_home == '1'"}
-                    <td class="exibir-home" data-label="Exibido na Home">Sim <i class="fa-solid fa-circle-check check"></i></td>
-                  {/if}
-                  {if="$value.exibir_na_home == '0'"}
-                    <td class="exibir-home" data-label="Exibido na Home">Não <i class="fa-solid fa-circle-xmark xmark"></i></td>
-                  {/if}
-              </tr>
-            {/loop}
+        {loop="$category"}
+          <tr>              
+            <td class="nome-categoria" data-label="Nome Categoria"><span>{$value.nome_categoria}</span></td>
+            {if="$value.status == 'ativo'"}
+              <td class="status" data-label="Status">{$value.status} <i class="fa-solid fa-circle-check"></i></td>
+            {/if}
+            {if="$value.status == 'inativo'"}
+              <td class="status" data-label="Status">{$value.status} <i class="fa-solid fa-circle-xmark"></i></td>
+            {/if} 
+
+            {if="$value.exibir_na_home == '1'"}
+              <td class="exibir-home" data-label="Exibido na Home">Sim <i class="fa-solid fa-circle-check check"></i></td>
+            {/if}
+            {if="$value.exibir_na_home == '0'"}
+              <td class="exibir-home" data-label="Exibido na Home">Não <i class="fa-solid fa-circle-xmark xmark"></i></td>
+            {/if}
+            <td class="actions" data-label="Ver Produtos"><a href="/admin/categorie/{$value.id_categoria}"><i class="fa-solid fa-square-arrow-up-right"></i></a></td>                 
+            
+            <td class="dt-cad" data-label="Data-Cadastro">{function="formatarData($value.data_criacao)"}</td>
+            <td class="dt-update" data-label="Data-Atualização">{function="formatarData($value.data_atualizacao)"}</td>
+            <td class="actions" data-label="Editar"><a href="/admin/atualizar-categoria/{$value.id_categoria}"><i class="fas fa-pencil"></i></a></td>
+            <td class="actions" data-label="Deletar"><a href="javascript:void(0)" onclick="confirmDelCategorie('{$value.id_categoria}', '{$value.nome_categoria}')"><i class="fas fa-trash"></i></a></td>                  
+          </tr>
+        {/loop}
       </tbody>
   </table>
 </div>

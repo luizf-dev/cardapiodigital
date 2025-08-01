@@ -2,10 +2,7 @@ body {
   background-color: white; }
 
 .container-admin {
-  width: 100%;
-  min-height: 100vh;
-  height: auto;
-  padding-bottom: 300px; }
+  width: 100%; }
 
 .home {
   display: flex;

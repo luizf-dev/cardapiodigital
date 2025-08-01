@@ -10,7 +10,6 @@ class User extends Connection {
     private $id;
     private $password;
     private $email;
-    private $telefone;
 
     public function __get($atributo){
         return $this->$atributo;

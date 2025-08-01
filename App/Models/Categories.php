@@ -43,7 +43,7 @@ class Categories extends Connection{
     //! método para listar as categorias ativas
     public function listarCategoriasAtivas(){
 
-        $query = "select * from tb_categories where status = 'Ativo'";
+        $query = "select * from tb_categories where status = 'Ativo' && exibir_na_home = 1";
         $stmt = $this->database->prepare($query);
         $stmt->execute();
 
@@ -131,26 +131,31 @@ class Categories extends Connection{
     }
 
     //! método para deletar uma categoria
-    public function deletarCategoria($id_categoria){
+    public function deletarCategoria($id_categoria) {
+    try {
+        // Verifica se existem produtos associados
+        $queryVerifica = "SELECT COUNT(*) as total FROM tb_produtos WHERE id_categoria = :id_categoria";
+        $stmtVerifica = $this->database->prepare($queryVerifica);
+        $stmtVerifica->bindValue(':id_categoria', $id_categoria);
+        $stmtVerifica->execute();
+        $resultado = $stmtVerifica->fetch(PDO::FETCH_ASSOC);
 
-        try {
-            $query = "delete from tb_categories where id_categoria = :id_categoria";
-            $stmt = $this->database->prepare($query);
-            $stmt->bindValue(':id_categoria', $id_categoria);
-            $stmt->execute();
-            $result = $stmt->rowCount();
-
-            if($result == 0){
-                return false;
-            }
-
-            return true;
-
-        } catch (PDOException $e) {
-            
-            return "Erro no banco de dados " . $e->getMessage();
+        if ($resultado['total'] > 0) {
+            return false; // Categoria tem produtos, não pode ser excluída
         }
-    }    
-}
 
+        // Se não tiver produtos, deleta
+        $query = "DELETE FROM tb_categories WHERE id_categoria = :id_categoria";
+        $stmt = $this->database->prepare($query);
+        $stmt->bindValue(':id_categoria', $id_categoria);
+        $stmt->execute();
+
+        return $stmt->rowCount() > 0;
+
+    } catch (PDOException $e) {
+        return "Erro no banco de dados: " . $e->getMessage();
+    }
+}
+  
+}
 

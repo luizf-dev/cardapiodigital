@@ -73,7 +73,7 @@ function msgSucesso(msgSucesso){
 //! Essa função abre um modal de confirmação antes da exclusão de algum produto  
 function confirmarExclusao(id, nome) {
 
-    const nomeFormatado = `<span class="alert-del-produto">${nome}</span>`;
+    const nomeFormatado = `<span>${nome}</span>`;
 
     const deletar = Swal.mixin({
         customClass: {
@@ -84,7 +84,7 @@ function confirmarExclusao(id, nome) {
     });
     
     deletar.fire({
-        title: 'Deseja mesmo excluir o produto?',
+        title: 'Deseja excluir o produto?',
         text: '',
         html: nomeFormatado,
         showCancelButton: true,
@@ -98,26 +98,27 @@ function confirmarExclusao(id, nome) {
         window.location.href = "/admin/deletar-produto/" + id;
         } else if (result.dismiss === Swal.DismissReason.cancel) {
         deletar.fire(
-            'Cancelado',
-            'O produto não foi excluído.',
+            'Cancelado!',
+            'Produto não excluído.',
             'error'
         );
         }
     });
-    }  
+}  
 
 //! Essa função abre um modal de confirmação antes da exclusão de alguma categoria
+
 function confirmDelCategorie(id_categoria, nome_categoria) {
 
-    const nomeFormatado = `<h6 class="alert-del-category">${nome_categoria}</h6>`;
+    const nomeFormatado = `<h4>${nome_categoria}</h4>`;
     const alerta = '<span>Atenção!!</span><br>';
-    const textoAlerta = '<span class="texto-alerta">Ao excluir uma categoria, os produtos vinculados a ela serão perdidos!<br/> Deseja mesmo excluir a categoria?</span>';
+    const textoAlerta = '<span class="texto-alerta">Deseja excluir a categoria?</span>';
     
     Swal.fire({
         title: `${alerta} ${textoAlerta} `,
         text: '',
         html: nomeFormatado,
-        icon: 'info',
+        icon: 'question',
         showCancelButton: true,
         confirmButtonText: 'Excluir!',
         cancelButtonText: 'Cancelar!',
@@ -128,8 +129,7 @@ function confirmDelCategorie(id_categoria, nome_categoria) {
         //! Aqui, você pode redirecionar o usuário para a rota de exclusão
         window.location.href = "/admin/deletar-categoria/" + id_categoria;
         } else if (result.dismiss === Swal.DismissReason.cancel) {
-        Swal.fire(
-            'Cancelado',
+        Swal.fire(            
             'Categoria não excluída!',
             'error'
         );

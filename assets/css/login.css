@@ -10,10 +10,17 @@
   height: 100vh;
   background-color: #DEDCFB; }
 
-.container-login h1 {
+.logo-index {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px; }
+
+.logo-index h2 {
   color: #5600CF; }
 
-.container-login h1 span {
+.container-login span {
   color: #EBAC31; }
 
 .formLogin {
@@ -25,7 +32,8 @@
   padding: 15px;
   color: #666;
   box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
-  gap: 5px; }
+  gap: 5px;
+  border-radius: 8px; }
 
 .container-login h1 {
   margin-bottom: 25px; }

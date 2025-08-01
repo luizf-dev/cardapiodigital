@@ -18,7 +18,7 @@
         <div class="close-btn">
           <i class="fas fa-times"></i>
         </div>
-        <img class="img-user" src="/assets/img/imagens/icon-admin.png" alt="img-user">
+        <img class="img-user" src="/assets/img/imagens/icon.svg" alt="img-user">
         <div class="nome-estabelecimento">
           <p><?php echo htmlspecialchars( $nome_estabelecimento, ENT_COMPAT, 'UTF-8', FALSE ); ?></p>
         </div>

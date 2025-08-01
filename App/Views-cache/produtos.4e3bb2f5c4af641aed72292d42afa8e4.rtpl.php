@@ -1,4 +1,4 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?><div id="submenu-scroll" class="submenu-scroll">
+<?php if(!class_exists('Rain\Tpl')){exit;}?> <div id="submenu-scroll" class="submenu-scroll">
     <a href="/">Home</a>
     <?php $counter1=-1;  if( isset($category) && ( is_array($category) || $category instanceof Traversable ) && sizeof($category) ) foreach( $category as $key1 => $value1 ){ $counter1++; ?>
 
