@@ -1,5 +1,7 @@
 <?php
 
+use App\Controllers\CadastrarAdicionalController;
+
 session_start();
 
 //!Carregamento automatico das classes
@@ -16,6 +18,7 @@ use App\Controllers\EditarCategoriaController;
 use App\Controllers\EditarProdutosController;
 use App\Controllers\HomeAdminController;
 use App\Controllers\IndexController;
+use App\Controllers\ListarAdicionaisController;
 use App\Controllers\ListarCategoriasController;
 use App\Controllers\ListarProdutosController;
 use App\Controllers\LoginController;
@@ -190,6 +193,24 @@ $app->post('/admin/cadastrar-imagem/{id}', function($request, $response, $args){
     $controller->cadastrarImagemPost($id);
     return $response;
 });
+
+//= rota para cadastrar um adicional ao produto
+$app->post('/admin/cadastrar-adicional', function($request, $response, $args){
+    
+    $controller = new CadastrarAdicionalController();
+    $controller->cadastrarAdicional();
+    return $response;
+});
+
+//= rota para listar os adicionais de um produto
+$app->get('/admin/listar-adicionais/{id}', function($request, $response, $args){
+
+    $id = $args['id'];
+    $controller = new ListarAdicionaisController();
+    $controller->listarAdicionais($id);
+    return $response;
+});
+
 
 
 $app->run();

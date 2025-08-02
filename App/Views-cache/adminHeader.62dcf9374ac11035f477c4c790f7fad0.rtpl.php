@@ -15,9 +15,13 @@
         <link rel="stylesheet" href="/assets/css/styleAdmin.css">  
         <link rel="stylesheet" href="/assets/css/categoriesAdmin.css"> 
         <link rel="stylesheet" href="/assets/css/produtosAdmin.css">          
+        <link rel="stylesheet" href="/assets/css/modal-adicional.css"> 
+        <link rel="stylesheet" href="/assets/css/adicionais.css"> 
         <script src="/assets/js/sweet-alert2.js"></script>
         <script src="/assets/js/main.js"></script>   
     </head>
     <body>	
-    <div class="container-admin"> 
+    <!-- <div class="container-admin"> -->
+    <div>
+        
                   

@@ -274,6 +274,36 @@ class  Produtos extends Connection{
             return "Erro no banco de dados: " . $e->getMessage();
         }
     }
-    
+
+    //!método para cadastrar adicionais a um produto
+      public function cadastrarAdicional($id_produto, $nome, $preco) {
+
+        $query = "INSERT INTO tb_adicionais (id_produto, nome, preco) VALUES (:id_produto, :nome, :preco)";
+        $stmt = $this->database->prepare($query);
+         $stmt->bindValue(':id_produto', $this->__get('id_produto'));
+        $stmt->bindValue(':nome', $this->__get('nome'));        
+        $stmt->bindValue(':preco', $this->__get('preco'));
+        return $stmt->execute();
+    }
+
+    //! método para listar os Adicionais de um produto com base no seu ID
+    public function getAdicionaisComProduto($id_produto){
+        $query = "
+            SELECT
+                a.id,
+                a.nome,
+                a.preco,
+                p.nome AS nome_produto
+            FROM tb_adicionais a
+            INNER JOIN tb_produtos p ON a.id_produto = p.id
+            WHERE a.id_produto = :id_produto
+        ";
+
+        $stmt = $this->database->prepare($query);
+        $stmt->bindValue(':id_produto', $id_produto, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+ 
 }
 

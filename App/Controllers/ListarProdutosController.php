@@ -26,12 +26,14 @@ class ListarProdutosController {
         $categories = new Categories($connect);
         $categoriasAtivas = $categories->listarCategoriasAtivas();
         $nomeCategoria = $categories->getNomeCategoria($id_categoria);
+        
+
 
         $page = new Page();
         $page->renderPage("produtos", [
             "produtos" => $produtos,
             "category" => $categoriasAtivas,
-            "nome_categoria" => $nomeCategoria
+            "nome_categoria" => $nomeCategoria            
         ]);
     }
 
@@ -46,18 +48,22 @@ class ListarProdutosController {
             //! Instancia de um novo objeto Produtos, passando a conexao com o banco de dados
             $produto = new Produtos($connect);
             $produtos = $produto->listarProdutosPorCategoriaAdmin($id_categoria);
+           
         
         
             //!instancia de um novo objeto categoria
             $categories = new Categories($connect);
             $categorie = $categories->listarCategorias();
             $nomeCategoria = $categories->getNomeCategoria($id_categoria);
+            $categoriaId = $id_categoria;
+            
         
             $page = new PageAdmin();
             $page->renderPage('listar-produtos', [
                 "produtos" => $produtos,
                 "categorie" => $categorie,
-                "nome_categoria" => $nomeCategoria,
+                "nome_categoria" => $nomeCategoria, 
+                "id_categoria" => $categoriaId,                                          
                 "msgSucesso" => Mensagens::getMsgSucesso(),
                 "msgErro" => Mensagens::getMsgErro()
             ]);

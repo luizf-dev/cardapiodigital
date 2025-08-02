@@ -39,8 +39,8 @@ class CadastrarProdutosController {
         $imagem = 'imagem-padrao.jpeg';
     
         $connect = Sql::getDatabase();
-        $id_categoria = $_POST['id_categoria'];
-    
+
+        $id_categoria = $_POST['id_categoria'];    
         $preco = $_POST['preco'];
         $valorEmReais = str_replace(['.', ','], ['', '.'], $preco);
     

@@ -42,6 +42,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+//!abre o modal para cadastrar um adicional para o produto
+function abrirModalAdicional(idProduto) {
+    document.getElementById('id_produto_adicional').value = idProduto;
+    document.getElementById("modal-adicional").classList.add("show");
+}
+
+//! fecha o modal de cadastro do adicional
+function fecharModalAdicional() {
+    document.getElementById("modal-adicional").classList.remove("show");
+}
 
 
 //! Msg para alertas de erro 

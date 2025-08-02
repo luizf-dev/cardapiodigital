@@ -58,6 +58,14 @@
                         <a class="btns" href="javascript:void(0)" onclick="confirmarExclusao('<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>', '<?php echo htmlspecialchars( $value1["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>')">                            
                             <i class="fa-solid fa-trash-can"></i>
                             Excluir Produto
+                        </a> 
+                        <a class="btns" href="javascript:void(0)" onclick="abrirModalAdicional('<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>')">                            
+                            <i class="fa-solid fa-circle-plus"></i>
+                            Cadastrar Adicional
+                        </a>
+                        <a class="btns btn-ver-adicionais" href="/admin/listar-adicionais/<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                            <i class="fa-solid fa-eye"></i>
+                            Ver Adicionais
                         </a>
                     </div>
                 </div>
@@ -72,3 +80,29 @@
         <?php } ?>
 
     </div>
+
+    <!-- Modal Cadastrar Adicional -->
+    <div id="modal-adicional" class="modal-overlay-adicional">
+        <div class="modal-content-adicional">
+            <span class="close-modal-adicional" onclick="fecharModalAdicional()">&times;</span>
+            <h2>Cadastrar Adicional</h2>
+            <form id="form-adicional" method="POST" action="/admin/cadastrar-adicional">
+                <input type="hidden" name="id_produto" id="id_produto_adicional">
+                <input type="hidden" value="<?php echo htmlspecialchars( $id_categoria, ENT_COMPAT, 'UTF-8', FALSE ); ?>"  name="id_categoria">
+
+                <div class="form-group">
+                    <label for="nome">Nome do Adicional:</label>
+                    <input type="text" name="nome" placeholder="Nome do Adicional" autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="preco">Preço:</label>
+                    <input type="text" name="preco" id="preco" placeholder="Preço do Adicional">
+                </div>                
+
+                <button type="submit" class="btn">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+
