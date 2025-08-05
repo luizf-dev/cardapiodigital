@@ -25,10 +25,16 @@
   padding: 25px 30px;
   width: 100%;
   max-width: 450px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   position: relative;
   animation: fadeIn 0.1s ease-in-out;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  border-top: 5px solid #5600CF;
+  border-bottom: 5px solid #5600CF;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4); }
 
 /* Close Button */
 .close-modal-adicional {

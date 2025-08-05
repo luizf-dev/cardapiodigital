@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\CadastrarAdicionalController;
+use App\Controllers\EditarAdicionaisController;
 
 session_start();
 
@@ -12,6 +13,7 @@ require_once './App/Helpers/Funcoes.php';
 use App\Controllers\CadastrarCategoriaController;
 use App\Controllers\CadastrarImagemController;
 use App\Controllers\CadastrarProdutosController;
+use App\Controllers\DeletarAdicionalController;
 use App\Controllers\DeletarCategoriaController;
 use App\Controllers\DeletarProdutosController;
 use App\Controllers\EditarCategoriaController;
@@ -208,6 +210,35 @@ $app->get('/admin/listar-adicionais/{id}', function($request, $response, $args){
     $id = $args['id'];
     $controller = new ListarAdicionaisController();
     $controller->listarAdicionais($id);
+    return $response;
+});
+
+
+//= rota para atualizar um adicional
+$app->get('/admin/atualizar-adicional/{id}', function($request, $response, $args){
+
+    $id = $args['id'];
+    $controller = new EditarAdicionaisController();
+    $controller->editarAdicionaisPage($id);
+    return $response;
+});
+
+//= rota post para atualizar um adicional
+$app->post('/admin/atualizar-adicional/{id}', function($request, $response, $args){
+
+    $id = $args['id'];
+    $controller = new EditarAdicionaisController();
+    $controller->editarAdicionaisPost($id);
+    return $response;
+});
+
+
+//= rota para deletar o adicional de um produto
+$app->get('/admin/deletar-adicional/{id}', function($request, $response, $args){
+
+    $id = $args['id'];
+    $controller = new DeletarAdicionalController();
+    $controller->deletarAdicional($id);
     return $response;
 });
 

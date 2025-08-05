@@ -3,11 +3,9 @@
 namespace App\Controllers;
 
 use App\Database\Sql;
-use App\Helpers\PageAdmin;
 use App\Helpers\Mensagens;
 use App\Helpers\Auth;
 use App\Models\Produtos;
-use App\Models\Categories;
 
 
 class DeletarProdutosController {

@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use App\Helpers\Auth;
 use App\Helpers\PageAdmin;
-use App\Database\Sql;
 
 class HomeAdminController {
 

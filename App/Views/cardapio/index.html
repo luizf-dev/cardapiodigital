@@ -21,7 +21,6 @@
                             {$value.descricao}
                         </p>
                         <span><i class="fa-solid fa-circle-plus"></i> Detalhes...</span>
-                        <!-- <button class="btn-detalhes" data-id="{$value.id}" data-nome="{$value.nome}" data-descricao="{$value.descricao}" data-imagem="assets/img/uploads/{$value.imagem}" data-preco='R$ {function="formatarPreco($value.preco)"}'><span><i class="fa-solid fa-circle-plus"></i> Detalhes...</span></button> -->
                     </div>
                     <div class="card-menu-img">
                         {if="$value.imagem != ''"}
@@ -46,7 +45,15 @@
             <div class="modal-info">
                 <h2 id="modal-nome"></h2>
                 <p id="modal-preco"></p> 
-                <p id="modal-descricao"></p>                     
+                <p id="modal-descricao"></p>
+                
+                 <!--! Adicionais -->
+                <div id="modal-adicionais" class="modal-adicionais">
+                    
+                    <ul id="lista-adicionais">
+                        <!-- Os adicionais serão preenchidos via JavaScript -->
+                    </ul>
+                </div>
             </div>
             <button class="btn-close-modal" id="close-modal">Fechar</button>
         </div>

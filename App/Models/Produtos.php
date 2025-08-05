@@ -304,6 +304,68 @@ class  Produtos extends Connection{
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
- 
+
+    //! método para listar os dados dos adicionais com base no id do adicional
+    public function getAdicionalById($id){
+
+        $query = "SELECT * FROM tb_adicionais WHERE id = :id";
+        $stmt = $this->database->prepare($query);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    //! método para atualizar adicionais de um produto com base no seu ID
+    public function editarAdicional($id, $nome, $preco){
+
+        $query = "UPDATE tb_adicionais 
+                SET nome = :nome, preco = :preco 
+                WHERE id = :id";
+
+        $stmt = $this->database->prepare($query);
+        $stmt->bindValue(':nome', $nome);
+        $stmt->bindValue(':preco', $preco);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+        return $stmt->execute();
+    }
+
+    //! método para deletar adicionais de um produto com base no seu ID
+    public function deletarAdicional($id){
+
+        $query = "DELETE FROM tb_adicionais WHERE id = :id";
+        $stmt = $this->database->prepare($query);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+
+
+    //! método para trazer os detalhes do produto e da categoria com base no id do adicional
+    public function getDetalhesComCategoria($id){
+
+        $query = "
+            SELECT 
+                tb_adicionais.id AS id_adicional,
+                tb_adicionais.nome AS nome_adicional,
+                tb_produtos.id AS id_produto,
+                tb_produtos.nome AS nome_produto,
+                tb_produtos.id_categoria,
+                tb_categories.nome_categoria
+            FROM 
+                tb_adicionais
+            JOIN 
+                tb_produtos ON tb_adicionais.id_produto = tb_produtos.id
+            JOIN 
+                tb_categories ON tb_produtos.id_categoria = tb_categories.id_categoria
+            WHERE 
+                tb_adicionais.id = :id
+        ";
+
+        $stmt = $this->database->prepare($query);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    } 
 }
 

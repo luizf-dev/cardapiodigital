@@ -147,6 +147,42 @@ function confirmDelCategorie(id_categoria, nome_categoria) {
     });
 }
 
+//! Essa função abre um modal de confirmação antes da exclusão de algum Adicional
+function confirmDelAdicional(id, nome) {
+
+    const nomeFormatado = `<span>${nome}</span>`;
+
+    const deletar = Swal.mixin({
+        customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: true
+    });
+    
+    deletar.fire({
+        title: 'Deseja excluir o Adicional?',
+        text: '',
+        html: nomeFormatado,
+        showCancelButton: true,
+        icon: 'info',
+        confirmButtonText: 'Sim!',
+        cancelButtonText: 'Não!',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+        //! Aqui, você pode redirecionar o usuário para a rota de exclusão
+        window.location.href = "/admin/deletar-adicional/" + id;
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+        deletar.fire(
+            'Cancelado!',
+            'Adicional não excluído.',
+            'error'
+        );
+        }
+    });
+}  
+
 
 
 //= Esse trecho abaixo se refere ao carregamento dos detalhes do produto em um modal para exibição 
@@ -163,6 +199,7 @@ const modalNome = document.getElementById('modal-nome');
 const modalDescricao = document.getElementById('modal-descricao');
 const modalPreco = document.getElementById('modal-preco');
 const closeModal = document.getElementById('close-modal');
+
 
 //!Função para abrir o modal com os detalhes do produto 
 detalhesBtns.forEach(btn => {

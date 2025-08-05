@@ -1,0 +1,21 @@
+// joins para trazer dados da categoria, do produto e do adiocional
+
+SELECT tb_adicionais.id AS adicional_id, tb_adicionais.nome AS adicional_nome, tb_adicionais.preco AS adicional_preco, tb_produtos.id AS produto_id, tb_produtos.nome AS produto_nome, tb_produtos.descricao AS produto_descricao, tb_produtos.preco AS produto_preco, tb_produtos.imagem AS produto_imagem, tb_produtos.id_categoria, tb_categories.nome_categoria AS categoria_nome FROM tb_adicionais JOIN tb_produtos ON tb_adicionais.id_produto = tb_produtos.id JOIN tb_categories ON tb_produtos.id_categoria = tb_categories.id_categoria WHERE tb_adicionais.id = 2;
+
+
+
+SELECT 
+    tb_adicionais.id AS id_adicional,
+    tb_adicionais.nome AS nome_adicional,
+    tb_produtos.id AS id_produto,
+    tb_produtos.nome AS nome_produto,
+    tb_produtos.id_categoria,
+    tb_categories.nome_categoria
+FROM 
+    tb_adicionais
+JOIN 
+    tb_produtos ON tb_adicionais.id_produto = tb_produtos.id
+JOIN 
+    tb_categories ON tb_produtos.id_categoria = tb_categories.id_categoria
+WHERE 
+    tb_adicionais.id = 2;

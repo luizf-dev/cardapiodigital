@@ -26,7 +26,6 @@
 
                         </p>
                         <span><i class="fa-solid fa-circle-plus"></i> Detalhes...</span>
-                        <!-- <button class="btn-detalhes" data-id="<?php echo htmlspecialchars( $value2["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-nome="<?php echo htmlspecialchars( $value2["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-descricao="<?php echo htmlspecialchars( $value2["descricao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-imagem="assets/img/uploads/<?php echo htmlspecialchars( $value2["imagem"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-preco='R$ <?php echo formatarPreco($value2["preco"]); ?>'><span><i class="fa-solid fa-circle-plus"></i> Detalhes...</span></button> -->
                     </div>
                     <div class="card-menu-img">
                         <?php if( $value2["imagem"] != '' ){ ?>
@@ -55,7 +54,15 @@
             <div class="modal-info">
                 <h2 id="modal-nome"></h2>
                 <p id="modal-preco"></p> 
-                <p id="modal-descricao"></p>                     
+                <p id="modal-descricao"></p>
+                
+                 <!--! Adicionais -->
+                <div id="modal-adicionais" class="modal-adicionais">
+                    
+                    <ul id="lista-adicionais">
+                        <!-- Os adicionais serão preenchidos via JavaScript -->
+                    </ul>
+                </div>
             </div>
             <button class="btn-close-modal" id="close-modal">Fechar</button>
         </div>

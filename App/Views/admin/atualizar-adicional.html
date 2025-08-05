@@ -1,0 +1,22 @@
+ <form class="form-add" method="POST" action="/admin/atualizar-adicional/{$adicional.id}">
+    <h3>Atualizar Adicional</h3>
+    <div class="input-group">
+        <input type="hidden" name="id" value="{$adicional.id}">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" value="{$adicional.nome}" placeholder="Nome do Adicional">
+    </div>
+    <div class="input-group">
+        <label for="preco">Preço</label>
+        <input type="text" name="preco" id="preco" value='{function="formatarPreco($adicional.preco)"}' placeholder="Preço do Adicional">
+    </div>           
+    <div class="form-actions">
+        <a href="/admin/listar-adicionais/{$adicional.id_produto}" class="btn-form">
+            <i class="fas fa-arrow-circle-left btn-icons"></i>
+            Cancelar
+        </a>
+        <button type="submit" class="btn-form">
+            <i class="fas fa-plus-circle btn-icons"></i>
+            Atualizar
+        </button>
+    </div>
+</form>

@@ -1,19 +1,20 @@
+{if="$msgSucesso != ''"}        
+    <script>
+        msgSucesso('{$msgSucesso}');
+    </script>       
+{/if} 
+
+{if="$msgErro != ''"}        
+<script>
+    msgErro('{$msgErro}');
+</script>
+{/if}
+
+
 <div class="container-adicionais">
-
     <div class="table-container">
-
-            {if="$msgSucesso != ''"}        
-                <script>
-                    msgSucesso('{$msgSucesso}');
-                </script>       
-            {/if} 
-
-            {if="$msgErro != ''"}        
-            <script>
-                msgErro('{$msgErro}');
-            </script>
-            {/if}
         <h3>Adicionais do produto - {$nome_produto}</h3>
+
         <table class="table">
             <thead>
                 <tr>
@@ -26,11 +27,10 @@
             <tbody>        
                 {loop="$adicionais"}
                     <tr>              
-                        <td class="nome-adicional" data-label="Nome Categoria"><span>{$value.nome}</span></td>                                     
-                        <td class="nome-adicional" data-label="Nome Categoria"><span>R$ {function="formatarPreco($value.preco)"}</span></td>                                     
-
+                        <td class="nome-adicional" data-label="Nome"><span>{$value.nome}</span></td>                                     
+                        <td class="nome-adicional" data-label="Preço"><span>R$ {function="formatarPreco($value.preco)"}</span></td>                                     
                         <td class="actions" data-label="Editar"><a href="/admin/atualizar-adicional/{$value.id}"><i class="fas fa-pencil"></i></a></td>
-                        <td class="actions" data-label="Deletar"><a href="javascript:void(0)" onclick="confirmDelCategorie('{$value.id}', '{$value.nome}')"><i class="fas fa-trash"></i></a></td>                  
+                        <td class="actions" data-label="Deletar"><a href="javascript:void(0)" onclick="confirmDelAdicional('{$value.id}', '{$value.nome}')"><i class="fas fa-trash"></i></a></td>                  
                     </tr>
                 {/loop}
             </tbody>

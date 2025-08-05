@@ -18,9 +18,11 @@ class ListarProdutosController {
         //!conexao com a base de dados
         $connect = Sql::getDatabase();
 
-        //! Instancia de um novo objeto Produtos, passando a conexao com o banco de dados
         $produto = new Produtos($connect);
         $produtos = $produto->listarProdutosPorCategoria($id_categoria);
+
+        
+
 
         //!instancia de um novo objeto categoria
         $categories = new Categories($connect);

@@ -155,7 +155,7 @@ class Categories extends Connection{
     } catch (PDOException $e) {
         return "Erro no banco de dados: " . $e->getMessage();
     }
-}
+    }
   
 }
 

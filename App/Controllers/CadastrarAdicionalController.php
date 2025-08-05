@@ -10,6 +10,7 @@ use App\Models\Produtos;
 class CadastrarAdicionalController{
 
 
+    //= método para cadastrar um adicional
     public function cadastrarAdicional(){
 
         Auth::verifyLogin();
