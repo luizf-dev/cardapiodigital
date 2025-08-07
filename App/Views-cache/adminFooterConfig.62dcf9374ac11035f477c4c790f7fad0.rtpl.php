@@ -1,5 +1,33 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?>        <script>
 
+                const categorias = [
+                { id_categoria: 3, nome_categoria: 'Combos' },
+                { id_categoria: 4, nome_categoria: 'Lanches' },
+                { id_categoria: 5, nome_categoria: 'Bebidas sem Álcool' }        
+            ];
+
+            const input = document.getElementById('busca_categoria');
+            const sugestoes = document.getElementById('sugestoes_categorias');
+
+            input.addEventListener('input', () => {
+                const termo = input.value.toLowerCase();
+                sugestoes.innerHTML = '';
+
+                if (termo.length > 1) {
+                    const resultados = categorias.filter(cat =>
+                        cat.nome_categoria.toLowerCase().includes(termo)
+                    );
+
+                    resultados.forEach(cat => {
+                        const item = document.createElement('a');
+                        item.href = `/admin/categorie/${cat.id_categoria}`;
+                        item.textContent = cat.nome_categoria;
+                        item.classList.add('autocomplete-item');
+                        sugestoes.appendChild(item);
+                    });
+                }
+            });
+
 
             // Nome do usuário vindo do backend
             const userFullName = "<?php echo htmlspecialchars( $nome_estabelecimento, ENT_COMPAT, 'UTF-8', FALSE ); ?>";       

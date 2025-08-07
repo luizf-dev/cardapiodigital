@@ -14,11 +14,7 @@
         <div class="input-group">
             <label for="preco">Preço</label>
             <input type="text" name="preco" id="preco" value='<?php echo formatarPreco($produtos["preco"]); ?>' placeholder="Preço do produto">
-        </div>
-       <!-- <div class="input-group">
-            <label for="imagem"></label>
-            <input type="hidden" name="imagem" id="imagem" value="<?php echo htmlspecialchars( $produtos["imagem"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
-        </div> -->
+        </div>       
         <div class="input-group">
             <label for="descricao">Descrição</label>
             <textarea name="descricao" id="descricao"  cols="30" rows="10"
@@ -27,10 +23,14 @@
         <div class="input-group">
             <label for="id_categoria">Categoria</label>
             <select name="id_categoria" id="id_categoria"> 
-                <option value="<?php echo htmlspecialchars( $produtos["id_categoria"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $produtos["id_categoria"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
+                <option value="<?php echo htmlspecialchars( $produtos["id_categoria"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $produtos["nome_categoria"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
                 <?php $counter1=-1;  if( isset($categorie) && ( is_array($categorie) || $categorie instanceof Traversable ) && sizeof($categorie) ) foreach( $categorie as $key1 => $value1 ){ $counter1++; ?>
 
-                    <option value="<?php echo htmlspecialchars( $value1["id_categoria"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["nome_categoria"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
+                    <?php if( $value1["id_categoria"] != $produtos["id_categoria"] ){ ?>
+
+                        <option value="<?php echo htmlspecialchars( $value1["id_categoria"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["nome_categoria"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
+                    <?php } ?>
+
                 <?php } ?>            
             </select>
         </div>

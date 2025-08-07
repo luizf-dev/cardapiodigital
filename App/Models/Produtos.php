@@ -169,7 +169,7 @@ class  Produtos extends Connection{
     }  
     
     //! método que traz os detalhes dos produtos com base em seu id
-    public function detalhesProduto($id) {
+   /* public function detalhesProduto($id) {
 
         $query = "select id, nome, preco, imagem, descricao, id_categoria, status  FROM tb_produtos WHERE id = :id";
         $stmt = $this->database->prepare($query);
@@ -182,6 +182,33 @@ class  Produtos extends Connection{
         return null;
         //! Retornar null em caso de erro ou nenhum resultado encontrado
     }
+    */
+    public function detalhesProduto($id) {
+        $query = "
+            SELECT 
+                p.id, 
+                p.nome, 
+                p.preco, 
+                p.imagem, 
+                p.descricao, 
+                p.id_categoria, 
+                c.nome_categoria,
+                p.status  
+            FROM tb_produtos p
+            JOIN tb_categories c ON p.id_categoria = c.id_categoria
+            WHERE p.id = :id
+        ";
+
+        $stmt = $this->database->prepare($query);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        
+        if ($stmt->execute()) {
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+        
+        return null;
+    }
+
 
     //!método para atualizar produtos
     public function atualizarProduto($id, $nome, $descricao, $preco, $id_categoria, $status){

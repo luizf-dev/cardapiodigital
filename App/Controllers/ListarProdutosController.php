@@ -20,15 +20,18 @@ class ListarProdutosController {
 
         $produto = new Produtos($connect);
         $produtos = $produto->listarProdutosPorCategoria($id_categoria);
-
         
+
+        //! Para cada produto, busco os adicionais e insiro no array
+        foreach ($produtos as &$item) {
+            $item['adicionais'] = $produto->getAdicionaisComProduto($item['id']);
+        }
 
 
         //!instancia de um novo objeto categoria
         $categories = new Categories($connect);
         $categoriasAtivas = $categories->listarCategoriasAtivas();
-        $nomeCategoria = $categories->getNomeCategoria($id_categoria);
-        
+        $nomeCategoria = $categories->getNomeCategoria($id_categoria);        
 
 
         $page = new Page();

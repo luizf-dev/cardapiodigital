@@ -20,9 +20,16 @@ class IndexController {
         $categories = new Categories($connect);
 
         //!instancia de um novo objeto de produtos para listar na home
-        $produtos = new Produtos($connect);
+        $produtos = new Produtos($connect);        
 
         $produto = $produtos->listarProdutosNaHome();
+
+         //! Itera sobre os produtos e adiciona os adicionais
+        foreach ($produto as $categoria => &$itens) {
+            foreach ($itens as &$item) {
+                $item['adicionais'] = $produtos->getAdicionaisComProduto($item['id']);
+            }
+        }
 
         $categoriasAtivas = $categories->listarCategoriasAtivas(); 
 
@@ -33,5 +40,4 @@ class IndexController {
             "produto" => $produto
         ]);        
     }
-
 }

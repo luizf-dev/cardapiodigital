@@ -199,6 +199,7 @@ const modalNome = document.getElementById('modal-nome');
 const modalDescricao = document.getElementById('modal-descricao');
 const modalPreco = document.getElementById('modal-preco');
 const closeModal = document.getElementById('close-modal');
+const modalAdicionais = document.getElementById('modal-adicionais');
 
 
 //!Função para abrir o modal com os detalhes do produto 
@@ -216,6 +217,21 @@ detalhesBtns.forEach(btn => {
         modalDescricao.textContent = descricao;
         modalPreco.textContent = preco;
 
+        // Busca a <ul> dos adicionais dentro do card clicado
+        const ulAdicionais = btn.querySelector('.lista-adicionais');
+
+        // Se houver adicionais, copia para o modal
+        if (ulAdicionais) {
+            // Clona a lista para não mover o original
+            const clonedUl = ulAdicionais.cloneNode(true);
+            clonedUl.style.display = 'block'; // <-- Aqui está o segredo
+            modalAdicionais.innerHTML = '<h3><i class="fa-solid fa-circle-plus"></i> Adicionais Disponíveis</h3></br>'; // título opcional
+            modalAdicionais.appendChild(clonedUl);
+        } else {
+            // Caso não tenha adicionais, limpa a área
+            modalAdicionais.innerHTML = '';
+        }        
+
         //! volta para a atual posição do scroll da tela
         scrollPosition = window.scrollY;
 
@@ -224,6 +240,8 @@ detalhesBtns.forEach(btn => {
         containerMenu.style.display = 'none';
     });
 });
+
+
 
 //!Fecha o modal ao clicar no botão de fechar
 closeModal.addEventListener('click', () => {
@@ -288,6 +306,13 @@ btnCloseModalContato.addEventListener('click', () => {
 
     modalContato.style.display = 'none';
 });
+
+
+
+
+
+
+
 
 
 

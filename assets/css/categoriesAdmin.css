@@ -110,6 +110,36 @@
   color: #f8b008;
   text-decoration: none; }
 
+.search-categories {
+  position: relative;
+  margin: 15px;
+  border: none;
+  outline: none; }
+
+.search-categories input {
+  border-radius: 8px;
+  height: 40px; }
+
+.autocomplete-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 9999; }
+
+.autocomplete-item {
+  padding: 8px 12px;
+  display: block;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer; }
+
+.autocomplete-item:hover {
+  background-color: #f0f0f0; }
+
 @media (max-width: 768px) {
   .table-container {
     min-width: 100%; }

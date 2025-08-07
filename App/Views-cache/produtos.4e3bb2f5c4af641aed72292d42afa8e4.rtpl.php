@@ -19,9 +19,22 @@
                     <p class="menu-item-description">
                         <?php echo htmlspecialchars( $value1["descricao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
 
-                    </p>
+                    </p> 
+                    
+                    <!-- Adicionais -->
+                    <?php if( isset($value1["adicionais"]) && count($value1["adicionais"]) > 0 ){ ?>                    
+                        <ul class="lista-adicionais" style="display: none;">
+                            <?php $counter2=-1;  if( isset($value1["adicionais"]) && ( is_array($value1["adicionais"]) || $value1["adicionais"] instanceof Traversable ) && sizeof($value1["adicionais"]) ) foreach( $value1["adicionais"] as $key2 => $value2 ){ $counter2++; ?>
+
+                                <li>
+                                    <i class="fa-solid fa-check"></i> <?php echo htmlspecialchars( $value2["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?> -  <strong>R$ <?php echo formatarPreco($value2["preco"]); ?></strong>
+                                </li>
+                            <?php } ?>
+
+                        </ul>
+                    <?php } ?>
+
                     <span><i class="fa-solid fa-circle-plus"></i> Detalhes...</span>
-                    <!-- <button class="btn-detalhes" data-id="<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-nome="<?php echo htmlspecialchars( $value1["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-descricao="<?php echo htmlspecialchars( $value1["descricao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-imagem="assets/img/uploads/<?php echo htmlspecialchars( $value1["imagem"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-preco='R$ <?php echo formatarPreco($value1["preco"]); ?>'><span><i class="fa-solid fa-circle-plus"></i> Detalhes...</span></button> -->
                 </div>
                 <div class="card-menu-img">
                     <?php if( $value1["imagem"] != '' ){ ?>
@@ -48,7 +61,8 @@
             <div class="modal-info">
                 <h2 id="modal-nome"></h2>
                 <p id="modal-preco"></p> 
-                <p id="modal-descricao"></p>                     
+                <p id="modal-descricao"></p>     
+                <div id="modal-adicionais"></div> <!-- Aqui será renderizado -->                     
             </div>
             <button class="btn-close-modal" id="close-modal">Fechar</button>
         </div>

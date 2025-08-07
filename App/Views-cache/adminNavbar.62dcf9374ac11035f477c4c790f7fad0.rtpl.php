@@ -4,7 +4,8 @@
   </div>
   <div>
     <h3>Epic Food <span>Admin</span></h3>
-  </div>
+  </div> 
+
   <div class="navbar">     
     <div class="salute" id="salute"></div>
   </div>
@@ -23,6 +24,10 @@
           <p><?php echo htmlspecialchars( $nome_estabelecimento, ENT_COMPAT, 'UTF-8', FALSE ); ?></p>
         </div>
     </header>
+    <div class="input-group search-categories">      
+      <input type="text" id="busca_categoria" placeholder="Buscar uma categoria">
+      <div id="sugestoes_categorias" class="autocomplete-list"></div>
+    </div>
     <div class="menu">
       <div class="item"><a href="/admin/home"><i class="fa-solid fa-house"></i> Home</a></div>
       <div class="item"><a href="/admin/categories"><i class="fa-solid fa-filter"></i> Categorias</a></div>

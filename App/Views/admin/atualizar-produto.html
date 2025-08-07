@@ -22,9 +22,11 @@
         <div class="input-group">
             <label for="id_categoria">Categoria</label>
             <select name="id_categoria" id="id_categoria"> 
-                <option value="{$produtos.id_categoria}">{$produtos.id_categoria}</option>
+                <option value="{$produtos.id_categoria}">{$produtos.nome_categoria}</option>
                 {loop="$categorie"}
-                    <option value="{$value.id_categoria}">{$value.nome_categoria}</option>
+                    {if="$value.id_categoria != $produtos.id_categoria"}
+                        <option value="{$value.id_categoria}">{$value.nome_categoria}</option>
+                    {/if}
                 {/loop}            
             </select>
         </div>

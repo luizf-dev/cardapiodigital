@@ -15,9 +15,19 @@
                     <h3 class="menu-item-title">{$value.nome}</h3>
                     <p class="menu-item-description">
                         {$value.descricao}
-                    </p>
+                    </p> 
+                    
+                    <!-- Adicionais -->
+                    {if="isset($value.adicionais) && count($value.adicionais) > 0"}                    
+                        <ul class="lista-adicionais" style="display: none;">
+                            {loop="$value.adicionais"}
+                                <li>
+                                    <i class="fa-solid fa-check"></i> {$value.nome} -  <strong>R$ {function="formatarPreco($value.preco)"}</strong>
+                                </li>
+                            {/loop}
+                        </ul>
+                    {/if}
                     <span><i class="fa-solid fa-circle-plus"></i> Detalhes...</span>
-                    <!-- <button class="btn-detalhes" data-id="{$value.id}" data-nome="{$value.nome}" data-descricao="{$value.descricao}" data-imagem="assets/img/uploads/{$value.imagem}" data-preco='R$ {function="formatarPreco($value.preco)"}'><span><i class="fa-solid fa-circle-plus"></i> Detalhes...</span></button> -->
                 </div>
                 <div class="card-menu-img">
                     {if="$value.imagem != ''"}
@@ -41,7 +51,8 @@
             <div class="modal-info">
                 <h2 id="modal-nome"></h2>
                 <p id="modal-preco"></p> 
-                <p id="modal-descricao"></p>                     
+                <p id="modal-descricao"></p>     
+                <div id="modal-adicionais"></div> <!-- Aqui será renderizado -->                     
             </div>
             <button class="btn-close-modal" id="close-modal">Fechar</button>
         </div>

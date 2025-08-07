@@ -25,6 +25,19 @@
                             <?php echo htmlspecialchars( $value2["descricao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
 
                         </p>
+                        <!-- Adicionais -->
+                        <?php if( isset($value2["adicionais"]) && count($value2["adicionais"]) > 0 ){ ?>                    
+                            <ul class="lista-adicionais" style="display: none;">
+                                <?php $counter3=-1;  if( isset($value2["adicionais"]) && ( is_array($value2["adicionais"]) || $value2["adicionais"] instanceof Traversable ) && sizeof($value2["adicionais"]) ) foreach( $value2["adicionais"] as $key3 => $value3 ){ $counter3++; ?>
+
+                                    <li>
+                                        <i class="fa-solid fa-check"></i>  <?php echo htmlspecialchars( $value3["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?> -  <strong>R$ <?php echo formatarPreco($value3["preco"]); ?></strong>
+                                    </li>
+                                <?php } ?>
+
+                            </ul>                            
+                        <?php } ?>
+
                         <span><i class="fa-solid fa-circle-plus"></i> Detalhes...</span>
                     </div>
                     <div class="card-menu-img">
@@ -55,14 +68,7 @@
                 <h2 id="modal-nome"></h2>
                 <p id="modal-preco"></p> 
                 <p id="modal-descricao"></p>
-                
-                 <!--! Adicionais -->
-                <div id="modal-adicionais" class="modal-adicionais">
-                    
-                    <ul id="lista-adicionais">
-                        <!-- Os adicionais serão preenchidos via JavaScript -->
-                    </ul>
-                </div>
+                 <div id="modal-adicionais"></div> <!-- Aqui será renderizado -->                                  
             </div>
             <button class="btn-close-modal" id="close-modal">Fechar</button>
         </div>
