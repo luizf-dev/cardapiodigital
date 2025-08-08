@@ -28,4 +28,19 @@ class ListarCategoriasController {
             "msgErro" => Mensagens::getMsgErro()
         ]);
     }
+
+
+
+     public function listarCategoriasJson()    {
+
+        Auth::verifyLogin();
+
+        $connect = Sql::getDatabase();
+        $categories = new Categories($connect);
+
+        $category = $categories->listarCategorias();
+        
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($category, JSON_UNESCAPED_UNICODE);
+    }
 }

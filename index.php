@@ -243,5 +243,12 @@ $app->get('/admin/deletar-adicional/{id}', function($request, $response, $args){
 });
 
 
+// = Rota para retornar categorias em JSON
+$app->get('/admin/categories/json', function() {
+    $controller = new ListarCategoriasController();
+    $controller->listarCategoriasJson();
+});
+
+
 
 $app->run();

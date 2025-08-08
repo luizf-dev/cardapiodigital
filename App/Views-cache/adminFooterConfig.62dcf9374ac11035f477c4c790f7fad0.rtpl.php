@@ -1,10 +1,10 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?>        <script>
 
-                const categorias = [
-                { id_categoria: 3, nome_categoria: 'Combos' },
-                { id_categoria: 4, nome_categoria: 'Lanches' },
-                { id_categoria: 5, nome_categoria: 'Bebidas sem Álcool' }        
-            ];
+            /*const categorias = [
+            { id_categoria: 3, nome_categoria: 'Combos' },
+            { id_categoria: 4, nome_categoria: 'Lanches' },
+            { id_categoria: 5, nome_categoria: 'Bebidas sem Álcool' }        
+            ];            
 
             const input = document.getElementById('busca_categoria');
             const sugestoes = document.getElementById('sugestoes_categorias');
@@ -26,7 +26,46 @@
                         sugestoes.appendChild(item);
                     });
                 }
+            });*/
+
+            // Função para remover acentos
+            function normalizarTexto(texto) {
+                return texto
+                    .normalize("NFD") // Decompõe caracteres acentuados
+                    .replace(/[\u0300-\u036f]/g, "") // Remove marcas de acento
+                    .toLowerCase();
+            }
+
+            let categorias = [];
+
+            // Carregar categorias do servidor
+            fetch('/admin/categories/json')
+                .then(res => res.json())
+                .then(data => categorias = data)
+                .catch(err => console.error('Erro ao carregar categorias', err));
+
+            const input = document.getElementById('busca_categoria');
+            const sugestoes = document.getElementById('sugestoes_categorias');
+
+            input.addEventListener('input', () => {
+                const termo = normalizarTexto(input.value);
+                sugestoes.innerHTML = '';
+
+                if (termo.length > 0) {
+                    const resultados = categorias.filter(cat =>
+                        normalizarTexto(cat.nome_categoria).includes(termo)
+                    );
+
+                    resultados.forEach(cat => {
+                        const item = document.createElement('a');
+                        item.href = `/admin/categorie/${cat.id_categoria}`;
+                        item.textContent = cat.nome_categoria;
+                        item.classList.add('autocomplete-item');
+                        sugestoes.appendChild(item);
+                    });
+                }
             });
+
 
 
             // Nome do usuário vindo do backend
@@ -54,8 +93,8 @@
             
                   
 
-             //!mascara para preenchimento do input de preço do produto
-             const inputPreco = document.getElementById('preco');
+            //!mascara para preenchimento do input de preço do produto
+            const inputPreco = document.getElementById('preco');
 
             inputPreco.addEventListener('input', function(){
             

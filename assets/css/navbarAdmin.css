@@ -146,6 +146,38 @@ header {
   color: white;
   margin-bottom: 10px; }
 
+.search-categories {
+  position: relative;
+  margin: 25px;
+  border: none;
+  outline: none; }
+
+.search-categories input {
+  border-radius: 4px;
+  height: 40px; }
+
+.autocomplete-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 3px;
+  z-index: 9999;
+  border-radius: 4px; }
+
+.autocomplete-item {
+  padding: 8px 12px;
+  display: block;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer; }
+
+.autocomplete-item:hover {
+  background-color: #f0f0f0; }
+
 @media screen and (max-width: 468px) {
   .navbar .salute {
     font-size: 0.5rem;
