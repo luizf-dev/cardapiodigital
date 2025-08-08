@@ -1,0 +1,88 @@
+    {if="$msgSucesso != ''"}        
+        <script>
+           msgSucesso('{$msgSucesso}');
+        </script>       
+    {/if}   
+
+    {if="$msgErro != ''"}        
+        <script>
+           msgErro('{$msgErro}');
+        </script>       
+    {/if}
+
+    <h3 class="titulo-categoria">{$produtos.nome}</h3>
+    <div class="produtos">           
+        <div class="produto">
+            <div class="dados-produto">                             
+                <div class="img-produto">
+                    {if="$produtos.imagem != ''"}
+                        <img id="product-image-{$value.id}" src="/assets/img/uploads/{$produtos.imagem}" alt="food">
+                    {else}
+                        <img src="/assets/img/uploads/imagem-padrao.jpeg" alt="">
+                    {/if}
+                </div>
+                <div class="info">
+                    <h5 class="nome-produto">{$produtos.nome}</h5>
+                    <p><span class="descricao">Descrição:</span> {$produtos.descricao}</p>
+                    <p><span class="preco">Preço: </span> {function="formatarPreco($produtos.preco)"}</p> 
+                    {if="$produtos.status == 'ativo'"}
+                        <p class="status"><span class="status">Status do Produto: </span> {$produtos.status} <i class="fa-solid fa-circle-check"></i></p>
+                    {/if}
+                    {if="$value.status == 'inativo'"}
+                        <p class="status"><span class="status">Status do Produto: </span> {$produtos.status} <i class="fa-solid fa-circle-xmark"></i></p>
+                    {/if}            
+                    <p><span class="categoria">Categoria: </span>{$produtos.nome_categoria}</p>
+                    <p><span class="date">Data Cadastro: </span>{function="formatarData($produtos.data_criacao)"}</p>
+                    <p><span class="date">Data Atualização: </span>{function="formatarData($produtos.data_atualizacao)"}</p>
+                </div>
+            </div>
+            <div class="actions-produtos">
+                <a class="btns" href="/admin/cadastrar-imagem/{$produtos.id}">                             
+                    <i class="fa-solid fa-image"></i> 
+                    Atualizar Imagem
+                </a>
+                <a class="btns" href="/admin/atualizar-produto/{$produtos.id}">
+                    <i class="fa-solid fa-pen-to-square"></i>                       
+                    Atualizar Produto
+                </a>
+                <a class="btns" href="javascript:void(0)" onclick="confirmarExclusao('{$produtos.id}', '{$produtos.nome}')">                            
+                    <i class="fa-solid fa-trash-can"></i>
+                    Excluir Produto
+                </a> 
+                <a class="btns" href="javascript:void(0)" onclick="abrirModalAdicional('{$produtos.id}')">                            
+                    <i class="fa-solid fa-circle-plus"></i>
+                    Cadastrar Adicional
+                </a>
+                <a class="btns btn-ver-adicionais" href="/admin/listar-adicionais/{$produtos.id}">
+                    <i class="fa-solid fa-eye"></i>
+                    Ver Adicionais
+                </a>
+            </div>
+        </div>      
+    </div>
+
+    <!-- Modal Cadastrar Adicional -->
+    <div id="modal-adicional" class="modal-overlay-adicional">
+        <div class="modal-content-adicional">
+            <span class="close-modal-adicional" onclick="fecharModalAdicional()">&times;</span>
+            <h2>Cadastrar Adicional</h2>
+            <form id="form-adicional" method="POST" action="/admin/cadastrar-adicional">
+                <input type="hidden" name="id_produto" id="id_produto_adicional">
+                <input type="hidden" value="{$id_categoria}"  name="id_categoria">
+
+                <div class="form-group">
+                    <label for="nome">Nome do Adicional:</label>
+                    <input type="text" name="nome" placeholder="Nome do Adicional" autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="preco">Preço:</label>
+                    <input type="text" name="preco" id="preco" placeholder="Preço do Adicional">
+                </div>                
+
+                <button type="submit" class="btn">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+

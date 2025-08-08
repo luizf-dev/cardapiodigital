@@ -54,6 +54,12 @@ function fecharModalAdicional() {
 }
 
 
+//! função de voltar uma pagina
+function voltar(){
+    window.history.back()
+}
+
+
 //! Msg para alertas de erro 
 function msgErro(msgErro){
     Swal.fire({
@@ -255,7 +261,6 @@ closeModal.addEventListener('click', () => {
 
 
 //= evento para aplicar a classe fixed ao submenu de cartegorias 
-
 //! armazena a ultima posição do scroll
 let lastScrollY = window.scrollY;
 

@@ -73,4 +73,34 @@ class ListarProdutosController {
                 "msgErro" => Mensagens::getMsgErro()
             ]);
     }
+
+    //= método para listar um unico produto de acordo com seu ID
+    public function listarProdutosporId($id){
+
+        //!conexao com a base de dados
+        $connect = Sql::getDatabase();
+
+        $produto = new Produtos($connect);
+        $produtos = $produto->detalhesProduto($id);
+
+        $page = new PageAdmin();
+        $page->renderPage("produto", [
+            "produtos" => $produtos,
+            "msgSucesso" => Mensagens::getMsgSucesso(),
+            "msgErro" => Mensagens::getMsgErro()            
+        ]);
+    }
+
+
+    public function listarProdutosJson() {
+
+        Auth::verifyLogin();
+
+        $connect = Sql::getDatabase();
+        $produtos = new Produtos($connect);
+        $produto = $produtos->listarProdutos();        
+        
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($produto, JSON_UNESCAPED_UNICODE);
+    }
 }

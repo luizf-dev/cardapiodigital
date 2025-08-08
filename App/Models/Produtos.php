@@ -169,20 +169,6 @@ class  Produtos extends Connection{
     }  
     
     //! método que traz os detalhes dos produtos com base em seu id
-   /* public function detalhesProduto($id) {
-
-        $query = "select id, nome, preco, imagem, descricao, id_categoria, status  FROM tb_produtos WHERE id = :id";
-        $stmt = $this->database->prepare($query);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        
-        if ($stmt->execute()) {
-            return $stmt->fetch(PDO::FETCH_ASSOC);
-        }
-        
-        return null;
-        //! Retornar null em caso de erro ou nenhum resultado encontrado
-    }
-    */
     public function detalhesProduto($id) {
         $query = "
             SELECT 
@@ -192,6 +178,8 @@ class  Produtos extends Connection{
                 p.imagem, 
                 p.descricao, 
                 p.id_categoria, 
+                p.data_criacao,
+                p.data_atualizacao,
                 c.nome_categoria,
                 p.status  
             FROM tb_produtos p

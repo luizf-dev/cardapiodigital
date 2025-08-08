@@ -28,8 +28,8 @@
         </div>
     </header>
     <div class="input-group search-categories">      
-      <input type="text" id="busca_categoria" placeholder="Buscar uma categoria">
-      <div id="sugestoes_categorias" class="autocomplete-list"></div>
+      <input type="text" id="busca_produtos" placeholder="Buscar um produto">
+      <div id="sugestoes_produtos" class="autocomplete-list"></div>
     </div>
     <div class="menu">
       <div class="item"><a href="/admin/home"><i class="fa-solid fa-house"></i> Home</a></div>

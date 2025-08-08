@@ -36,30 +36,30 @@
                     .toLowerCase();
             }
 
-            let categorias = [];
+            let produtos = [];
 
-            // Carregar categorias do servidor
-            fetch('/admin/categories/json')
+            // Carregar produtos do servidor
+            fetch('/admin/produto/json')
                 .then(res => res.json())
-                .then(data => categorias = data)
-                .catch(err => console.error('Erro ao carregar categorias', err));
+                .then(data => produtos = data)
+                .catch(err => console.error('Erro ao carregar produtos', err));
 
-            const input = document.getElementById('busca_categoria');
-            const sugestoes = document.getElementById('sugestoes_categorias');
+            const input = document.getElementById('busca_produtos');
+            const sugestoes = document.getElementById('sugestoes_produtos');
 
             input.addEventListener('input', () => {
                 const termo = normalizarTexto(input.value);
                 sugestoes.innerHTML = '';
 
                 if (termo.length > 0) {
-                    const resultados = categorias.filter(cat =>
-                        normalizarTexto(cat.nome_categoria).includes(termo)
+                    const resultados = produtos.filter(prod =>
+                        normalizarTexto(prod.nome).includes(termo)
                     );
 
-                    resultados.forEach(cat => {
+                    resultados.forEach(prod => {
                         const item = document.createElement('a');
-                        item.href = `/admin/categorie/${cat.id_categoria}`;
-                        item.textContent = cat.nome_categoria;
+                        item.href = `/admin/detalhe-produto/${prod.id}`;
+                        item.textContent = prod.nome;
                         item.classList.add('autocomplete-item');
                         sugestoes.appendChild(item);
                     });

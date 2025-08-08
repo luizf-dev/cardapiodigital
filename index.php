@@ -42,6 +42,15 @@ $app->get('/', function(){
     $controller->index();
 });
 
+//= Rota para listar um produto com base no seu ID
+$app->get('/admin/detalhe-produto/{id}', function($request, $response, $args){
+
+    $id = $args['id'];
+    $controller = new ListarProdutosController();
+    $controller->listarProdutosporId($id);
+
+});
+
 //= rota listar produtos de acordo com a categoria
 $app->get('/categorie/{id_categoria}', function($request, $response, $args){
 
@@ -243,10 +252,11 @@ $app->get('/admin/deletar-adicional/{id}', function($request, $response, $args){
 });
 
 
-// = Rota para retornar categorias em JSON
-$app->get('/admin/categories/json', function() {
-    $controller = new ListarCategoriasController();
-    $controller->listarCategoriasJson();
+// = Rota para retornar produtos em JSON
+$app->get('/admin/produto/json', function() {
+
+    $controller = new ListarProdutosController();
+    $controller->listarProdutosJson();
 });
 
 
