@@ -19,7 +19,6 @@ class CadastrarAdicionalController{
             $connect = Sql::getDatabase(); // Sua conexão com o banco
 
             $id_produto = $_POST['id_produto'];
-            $id_categoria = $_POST['id_categoria'];
             $nome = trim($_POST['nome']);
             $preco = $_POST['preco'];
             $valorEmReais = str_replace(['.', ','], ['', '.'], $preco);
@@ -27,9 +26,10 @@ class CadastrarAdicionalController{
             // Validação básica
             if (empty($id_produto) || empty($nome) || $valorEmReais === '') {
                 Mensagens::setMsgErro('Preencha os campos corretamente!');
-                header("Location: /admin/categorie/$id_categoria");
+                header("Location: " . $_SERVER['HTTP_REFERER']);
                 exit;
             }
+           
 
             // Instancia o model com a conexão
             $produtos = new Produtos($connect);
@@ -42,11 +42,11 @@ class CadastrarAdicionalController{
             // Tenta cadastrar
             if ($produtos->cadastrarAdicional($id_produto, $nome, $preco)) {
                 Mensagens::setMsgSucesso('Adicional cadastrado com sucesso!');
-                header("Location: /admin/categorie/$id_categoria");
+                header("Location: /admin/detalhe-produto/$id_produto");
                 exit;
             } else {
                 Mensagens::setMsgErro('Erro ao cadastrar adicional!');
-                header("Location: /admin/categorie/$id_categoria");
+                header("Location: /admin/detalhe-produto/$id_produto");
                 exit;
             }
         }

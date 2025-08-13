@@ -13,32 +13,47 @@
         <input type="text" name="nome_categoria" id="nome_categoria" value="<?php echo htmlspecialchars( $categoria["nome_categoria"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" />
     </div>
 
-        <?php if( $categoria["status"] == 'ativo' ){ ?>
-
-            <label class="active" for="active">Status da Categoria - <?php echo htmlspecialchars( $categoria["status"], ENT_COMPAT, 'UTF-8', FALSE ); ?> <i class="fa-solid fa-circle-check"></i></label>
-        <?php } ?>
-
-        <?php if( $categoria["status"] == 'inativo' ){ ?>
-
-            <label class="disabled" for="disabled">Status da Categoria - <?php echo htmlspecialchars( $categoria["status"], ENT_COMPAT, 'UTF-8', FALSE ); ?> <i class="fa-solid fa-circle-xmark"></i></label>
-        <?php } ?>
-
-
-    <div class="input-group">                
+    <div class="input-group">  
+    <label for="id_categoria">Categoria</label>              
         <select name="status" id="status">
-            <option value="<?php echo htmlspecialchars( $categoria["status"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" > Selecione para alterar o status da categoria</option>
-            <option value="ativo">Ativo</option>
-            <option value="inativo">Inativo</option>
+            <option value="<?php echo htmlspecialchars( $categoria["status"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo ucfirst($categoria["status"]); ?></option>
+            <?php if( $categoria["status"] == 'ativo' ){ ?>
+
+                <option value="inativo">Inativo</option>
+            <?php }else{ ?>
+
+                <option value="ativo">Ativo</option>
+            <?php } ?>
+
         </select>
     </div>
 
-    <div class="input-group">                
-        <select name="exibir_na_home" id="exibir_na_home">
-            <option value="<?php echo htmlspecialchars( $categoria["exibir_na_home"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"> Selecione para exibir/ocultar a categoria da Home</option>
+
+    <div class="input-group">    
+    <label for="id_exibir_na_home">Exibido na Home</label>               
+    <select name="exibir_na_home" id="exibir_na_home">
+        <option value="<?php echo htmlspecialchars( $categoria["exibir_na_home"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+            <?php if( $categoria["exibir_na_home"] == 1 ){ ?>
+
+                Exibido na Home
+            <?php }else{ ?>
+
+                Ocultado na Home
+            <?php } ?>
+
+        </option>
+
+        <?php if( $categoria["exibir_na_home"] == 1 ){ ?>
+
             <option value="0">Ocultar na Home</option>
+        <?php }else{ ?>
+
             <option value="1">Exibir na Home</option>
-        </select>
-    </div>
+        <?php } ?>
+
+    </select>
+</div>
+
     
     <div class="form-actions">
         <a href="/admin/categories" class="btn-form default">

@@ -33,13 +33,13 @@ class DeletarAdicionalController {
         if($adicional){
 
             Mensagens::setMsgSucesso('Adicional excluído com sucesso!');
-            header("Location: /admin/categorie/$id_categoria");
+            header("Location: /admin/detalhe-produto/$id_produto");
             exit;
 
         }else{
             
             Mensagens::setMsgSucesso('Não foi possível deletar! Tente novamente!');
-            header("Location:  /admin/categorie/$id_categoria");
+            header("Location:  /admin/detalhe-produto/$id_produto");
             exit;
         } 
     }

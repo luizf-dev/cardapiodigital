@@ -14,7 +14,7 @@
         </div>
 
         <div class="form-actions">
-            <a href="/admin/categorie/<?php echo htmlspecialchars( $produtos["id_categoria"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn-form">
+            <a onclick="voltar()" class="btn-form">
                 <i class="fas fa-arrow-circle-left btn-icons"></i>
                 Cancelar
             </a>

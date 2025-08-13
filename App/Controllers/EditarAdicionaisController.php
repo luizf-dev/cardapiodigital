@@ -51,7 +51,7 @@ class EditarAdicionaisController {
 
             Mensagens::setMsgErro('Campos em branco, não é possível atualizar!');
 
-            header("Location: /admin/atualizar-produto/$id_produto");
+            header("Location: /admin/listar-adicionais/$id_produto");
             exit;
         }
 

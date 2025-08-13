@@ -1,9 +1,8 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?><nav id="menu">
-    <ul>        
-        <li><img src="/assets/img/imagens/logo.png" alt=""></li>  
-        <li><button id="btn-contato"><i class="fa-solid fa-bars"></i></button></li>          
-    </ul>
+<?php if(!class_exists('Rain\Tpl')){exit;}?><nav id="menu">       
+    <div><img src="/assets/img/imagens/logo.png" alt=""></div>
+    <div class="actions">        
+        <button id="btn-contato"><i class="fa-solid fa-bars"></i></button>
+    </div>                
 </nav>
 
 <img class="banner-home" src="/assets/img/imagens/banner-2.jpg" alt="banner-home">
-  

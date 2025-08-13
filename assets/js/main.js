@@ -1,3 +1,4 @@
+
 //! Fecha a sidebar ao clicar fora dela ou deslizar para a esquerda
 document.addEventListener("DOMContentLoaded", function () {
     
@@ -104,9 +105,9 @@ function confirmarExclusao(id, nome) {
         text: '',
         html: nomeFormatado,
         showCancelButton: true,
-        icon: 'info',
-        confirmButtonText: 'Sim!',
-        cancelButtonText: 'Não!',
+        icon: 'question',
+        confirmButtonText: 'Sim',
+        cancelButtonText: 'Não',
         reverseButtons: true
     }).then((result) => {
         if (result.isConfirmed) {
@@ -114,7 +115,7 @@ function confirmarExclusao(id, nome) {
         window.location.href = "/admin/deletar-produto/" + id;
         } else if (result.dismiss === Swal.DismissReason.cancel) {
         deletar.fire(
-            'Cancelado!',
+            '',
             'Produto não excluído.',
             'error'
         );
@@ -123,7 +124,6 @@ function confirmarExclusao(id, nome) {
 }  
 
 //! Essa função abre um modal de confirmação antes da exclusão de alguma categoria
-
 function confirmDelCategorie(id_categoria, nome_categoria) {
 
     const nomeFormatado = `<h4>${nome_categoria}</h4>`;
@@ -136,8 +136,8 @@ function confirmDelCategorie(id_categoria, nome_categoria) {
         html: nomeFormatado,
         icon: 'question',
         showCancelButton: true,
-        confirmButtonText: 'Excluir!',
-        cancelButtonText: 'Cancelar!',
+        confirmButtonText: 'Sim',
+        cancelButtonText: 'Não',
         denyButtonText: 'Dont Save',
         reverseButtons: true
     }).then((result) => {
@@ -145,9 +145,10 @@ function confirmDelCategorie(id_categoria, nome_categoria) {
         //! Aqui, você pode redirecionar o usuário para a rota de exclusão
         window.location.href = "/admin/deletar-categoria/" + id_categoria;
         } else if (result.dismiss === Swal.DismissReason.cancel) {
-        Swal.fire(            
+        Swal.fire(        
+            '',    
             'Categoria não excluída!',
-            'error'
+            'error'            
         );
         }
     });
@@ -171,9 +172,9 @@ function confirmDelAdicional(id, nome) {
         text: '',
         html: nomeFormatado,
         showCancelButton: true,
-        icon: 'info',
-        confirmButtonText: 'Sim!',
-        cancelButtonText: 'Não!',
+        icon: 'question',
+        confirmButtonText: 'Sim',
+        cancelButtonText: 'Não',
         reverseButtons: true
     }).then((result) => {
         if (result.isConfirmed) {
@@ -181,15 +182,13 @@ function confirmDelAdicional(id, nome) {
         window.location.href = "/admin/deletar-adicional/" + id;
         } else if (result.dismiss === Swal.DismissReason.cancel) {
         deletar.fire(
-            'Cancelado!',
+            '',
             'Adicional não excluído.',
             'error'
         );
         }
     });
-}  
-
-
+} 
 
 //= Esse trecho abaixo se refere ao carregamento dos detalhes do produto em um modal para exibição 
 
@@ -293,24 +292,24 @@ window.addEventListener('scroll', () => {
 
 
 
-
+//=  Exibe o modal de contato
 const btnContato = document.getElementById('btn-contato');
 const modalContato = document.getElementById('modal-contato');
 const btnCloseModalContato = document.getElementById('close-modal-contato');
 
-//=  Exibe o modal de contato
+
 btnContato.addEventListener('click', () => {
     
     modalContato.style.display = 'block';
     //containerMenu.style.display = 'none';
-    
-
 });
 
 btnCloseModalContato.addEventListener('click', () => {
 
     modalContato.style.display = 'none';
 });
+
+
 
 
 

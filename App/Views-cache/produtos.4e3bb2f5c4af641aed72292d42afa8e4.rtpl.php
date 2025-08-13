@@ -74,7 +74,6 @@
     <div class="modal-contato-content">
         <button class="btn-close-modal-contato" id="close-modal-contato">X</button>        
         <div class="modal-contato-body">     
-            <p>Sua logo aqui</p>
             <img src="/assets/img/imagens/logo.png" alt="logo">        
             <div class="dados-contato">
                 <span><i class="fa-solid fa-location-dot"></i> Nome da rua - 2569, Bairro, Cidade, Estado</span>

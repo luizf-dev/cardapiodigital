@@ -35,7 +35,9 @@ html {
   height: 70px;
   max-width: 1000px;
   margin: 30px auto;
-  color: #281604; }
+  color: #281604;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px; }
 
 .card-menu {
   display: flex;

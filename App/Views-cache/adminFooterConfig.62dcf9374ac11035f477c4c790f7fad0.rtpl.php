@@ -1,32 +1,21 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?>        <script>
+<?php if(!class_exists('Rain\Tpl')){exit;}?>        <script>  
+        
+            //! Abrir e fechar modal de busca do produto
+            const searchModal = document.getElementById('searchModal');
+            const openSearch = document.getElementById('openSearch');
+            const closeSearch = document.getElementById('closeSearch');
 
-            /*const categorias = [
-            { id_categoria: 3, nome_categoria: 'Combos' },
-            { id_categoria: 4, nome_categoria: 'Lanches' },
-            { id_categoria: 5, nome_categoria: 'Bebidas sem Álcool' }        
-            ];            
+            openSearch.addEventListener('click', () => {
+                
+                searchModal.style.display = 'block';
+                console.log('Ícone de busca clicado!');
+            });
 
-            const input = document.getElementById('busca_categoria');
-            const sugestoes = document.getElementById('sugestoes_categorias');
+            closeSearch.addEventListener('click', () => {
 
-            input.addEventListener('input', () => {
-                const termo = input.value.toLowerCase();
-                sugestoes.innerHTML = '';
+                searchModal.style.display = 'none';
+            });      
 
-                if (termo.length > 1) {
-                    const resultados = categorias.filter(cat =>
-                        cat.nome_categoria.toLowerCase().includes(termo)
-                    );
-
-                    resultados.forEach(cat => {
-                        const item = document.createElement('a');
-                        item.href = `/admin/categorie/${cat.id_categoria}`;
-                        item.textContent = cat.nome_categoria;
-                        item.classList.add('autocomplete-item');
-                        sugestoes.appendChild(item);
-                    });
-                }
-            });*/
 
             // Função para remover acentos
             function normalizarTexto(texto) {
@@ -48,6 +37,7 @@
             const sugestoes = document.getElementById('sugestoes_produtos');
 
             input.addEventListener('input', () => {
+                
                 const termo = normalizarTexto(input.value);
                 sugestoes.innerHTML = '';
 

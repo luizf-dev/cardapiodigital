@@ -14,7 +14,7 @@
 
 <div class="container-adicionais">
     <div class="table-container">
-        <h3>Adicionais do produto - <?php echo htmlspecialchars( $nome_produto, ENT_COMPAT, 'UTF-8', FALSE ); ?></h3>
+        <h3>Adicionais do produto - <a href="/admin/detalhe-produto/<?php echo htmlspecialchars( $id_produto, ENT_COMPAT, 'UTF-8', FALSE ); ?>" style="color: #17c717; text-decoration: underline;"><?php echo htmlspecialchars( $nome_produto, ENT_COMPAT, 'UTF-8', FALSE ); ?></a></h3>
 
         <table class="table">
             <thead>

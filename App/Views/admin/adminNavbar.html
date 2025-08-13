@@ -7,6 +7,9 @@
   <div>
     <h3>Epic Food <span>Admin</span></h3>
   </div> 
+  <!-- Ícone de busca na navbar -->
+  <i class="fa-solid fa-magnifying-glass search-icon" id="openSearch"></i> <!-- Ícone de lupa -->
+
 
   <div class="navbar">     
     <div class="salute" id="salute"></div>
@@ -15,6 +18,18 @@
   <div class="logout">
     <a href="/admin/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
   </div>
+</div>
+
+<!-- Modal fullscreen para busca de produtos  -->
+<div id="searchModal" class="search-modal">
+    <div class="search-content">
+        <span class="close-search" id="closeSearch">&times;</span>
+        
+        <div class="input-group search-produtos">      
+        <input type="text" id="busca_produtos" placeholder="Buscar um produto">
+            <div id="sugestoes_produtos" class="autocomplete-list"></div>
+        </div>
+    </div>
 </div>
 
 <div class="side-bar">
@@ -27,10 +42,6 @@
           <p>{$nome_estabelecimento}</p>
         </div>
     </header>
-    <div class="input-group search-categories">      
-      <input type="text" id="busca_produtos" placeholder="Buscar um produto">
-      <div id="sugestoes_produtos" class="autocomplete-list"></div>
-    </div>
     <div class="menu">
       <div class="item"><a href="/admin/home"><i class="fa-solid fa-house"></i> Home</a></div>
       <div class="item"><a href="/admin/categories"><i class="fa-solid fa-filter"></i> Categorias</a></div>
@@ -40,5 +51,7 @@
       <div class="item"><a href="/admin/logout"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></div>
     </div>
 </div>
+
+
 
   

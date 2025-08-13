@@ -60,7 +60,7 @@ class LoginController {
             exit();
 
         } else {
-            Mensagens::setMsgErro('Algo saiu mal com o login! :( ');
+            Mensagens::setMsgErro('Algo saiu mal com o login!');
             header('Location: /admin');
             exit();
         }

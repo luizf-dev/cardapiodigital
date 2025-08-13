@@ -21,7 +21,7 @@
   color: #5600CF; }
 
 .container-login span {
-  color: #EBAC31; }
+  color: #17c717; }
 
 .formLogin {
   display: flex;
@@ -97,10 +97,7 @@
   color: #ffffff; }
 
 @media screen and (max-width: 468px) {
-  .container-login {
-    justify-content: start; }
-
   .formLogin {
-    max-width: 280px; } }
+    max-width: 300px; } }
 
 /*# sourceMappingURL=login.css.map */

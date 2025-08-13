@@ -40,7 +40,7 @@
         </select>
     </div>
     <div class="form-actions">
-        <a href="/admin/home" class="btn-form default">
+        <a href="/admin/categories" class="btn-form default">
             <i class="fas fa-arrow-circle-left btn-icons"></i>
             Cancelar
         </a>

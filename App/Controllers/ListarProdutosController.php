@@ -77,6 +77,8 @@ class ListarProdutosController {
     //= método para listar um unico produto de acordo com seu ID
     public function listarProdutosporId($id){
 
+        Auth::verifyLogin();
+
         //!conexao com a base de dados
         $connect = Sql::getDatabase();
 
