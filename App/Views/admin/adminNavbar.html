@@ -5,7 +5,7 @@
   </div>
 
   <div>
-    <h3>Epic Food <span>Admin</span></h3>
+    <h3>QR Code Menu<span> Admin</span></h3>
   </div> 
   <!-- Ícone de busca na navbar -->
   <i class="fa-solid fa-magnifying-glass search-icon" id="openSearch"></i> <!-- Ícone de lupa -->

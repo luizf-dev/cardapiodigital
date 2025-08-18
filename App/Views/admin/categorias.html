@@ -46,8 +46,8 @@
             {/if}
             <td class="actions" data-label="Ver Produtos"><a href="/admin/categorie/{$value.id_categoria}"><i class="fa-solid fa-square-arrow-up-right"></i></a></td>                 
             
-            <td class="dt-cad" data-label="Data-Cadastro">{function="formatarData($value.data_criacao)"}</td>
-            <td class="dt-update" data-label="Data-Atualização">{function="formatarData($value.data_atualizacao)"}</td>
+            <td class="dt-cad" data-label="Data Cadastro">{function="formatarData($value.data_criacao)"}</td>
+            <td class="dt-update" data-label="Data Atualização">{function="formatarData($value.data_atualizacao)"}</td>
             <td class="actions" data-label="Editar"><a href="/admin/atualizar-categoria/{$value.id_categoria}"><i class="fas fa-pencil"></i></a></td>
             <td class="actions" data-label="Deletar"><a href="javascript:void(0)" onclick="confirmDelCategorie('{$value.id_categoria}', '{$value.nome_categoria}')"><i class="fas fa-trash"></i></a></td>                  
           </tr>

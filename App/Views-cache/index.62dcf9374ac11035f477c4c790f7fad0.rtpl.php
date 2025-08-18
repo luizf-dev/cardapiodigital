@@ -11,7 +11,7 @@
     <form method="POST" action="/admin" class="formLogin">
         <div class="logo-index">
             <img src="/assets/img/imagens/icon.svg" width="100px" alt="">
-            <h2>Epic Food</h2>
+            <h2>QR Code Menu</h2>
         </div>
         <div>
             <input type="text" name="email" placeholder="Digite seu endereço de email" autofocus="true" />
@@ -23,6 +23,7 @@
         </div>
         <button type="submit" class="btn">Entrar</button>
     </form>
+    
 </div>
 
 

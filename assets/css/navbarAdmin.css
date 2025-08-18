@@ -15,7 +15,8 @@
   z-index: 1; }
 
 .top-bar h3 {
-  color: #ffffff; }
+  color: #ffffff;
+  font-size: 0.8rem; }
 
 .top-bar span {
   color: #17c717; }
