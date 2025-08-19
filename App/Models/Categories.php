@@ -43,7 +43,7 @@ class Categories extends Connection{
     //! método para listar as categorias ativas
     public function listarCategoriasAtivas(){
 
-        $query = "select * from tb_categories where status = 'Ativo' && exibir_na_home = 1";
+        $query = "select * from tb_categories where status = 'ativo'";
         $stmt = $this->database->prepare($query);
         $stmt->execute();
 
